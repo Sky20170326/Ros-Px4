@@ -1,0 +1,8 @@
+prefix=/home/pi/catkin_workspace/devel
+
+Name: holloworld
+Description: Description of holloworld
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/pi/catkin_workspace/devel/lib 
+Requires: 
