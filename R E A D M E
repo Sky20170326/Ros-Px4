@@ -1,0 +1,140 @@
+# MavROS setup on Raspberry pi 3b
+
+## 1. 操作系统
+官方的ROS在Raspbian系统哦南方上（截至到目前为止），有许多依赖项无法从rosdep自动安装，且暂未找到快速的解决方法，于是在大量搜索后，决定采用ubuntu mate（2016.4 LTS）作为操作系统。  
+系统安装：  
+从树莓派官网选择ubuntu mate，并选择长期支持版本（LTS）下载，下载后文件为xz格式，校验无误后执行：
+
+	xzcat ubuntu.xz | dd of=/dev/sd#
+
+请将上面的井号替换为内存卡路径。  
+（⚠警告：如果您选择错误，将会造成其他位置数据损坏！）
+
+
+烧录完成后，请连接显示器（如果无法显示，请修改/boot/config.txt），并用鼠标、键盘完成安装向导（ubuntu系列在选择时区（第三步）时有一个bug，即如果您连接了无法访问互联网的受限网络时，系统将无法自动获得您所在的时区，导致安装失败，您可以拔掉网线以消除此故障）。  
+
+执行  
+
+	raspi-config
+启用 
+ 
+	ssh
+
+并设置开机进入CLI界面，关闭图形化启动界面。
+
+在系统升级中，选择较快镜像站，并启用
+
+	"restricted” “universe” “multiverse”
+
+安装基本软件(酌情安装)，并进行系统升级
+```
+apt update
+apt dist-upgrade -y
+apt install -y tmux vim fish git mosh htop nload aptitude
+```
+
+## 2. 添加ROS镜像源，并安装密钥
+	sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list' 
+	wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+	apt update
+
+
+## 3. 安装ROS
+	apt install ros-kinetic-desktop-full
+
+## 4. 初始化ROS
+
+```
+sudo rosdep init
+rosdep update
+```
+
+## 5. 初始化环境
+```
+echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+
+## 6. 建立工作目录
+
+```
+mkdir -p ~/catkin_workspace/src
+cd catkin_workspace/src
+catkin_init_workspace
+cd ~/catkin_workspace/
+catkin_make
+```
+
+## 7. 添加工作目录环境
+
+```
+source ~/catkin_workspace/devel/setup.bash
+echo “source ~/catkin_workspace/devel/setup.bash” >> ~/.bashrc
+```
+
+## 8. 检查环境变量
+
+	export | grep ROS
+
+## 9. 安装MavProxy
+    pip install mavproxy
+
+## 10. 使用mavproxy将串口改为udp
+    mavproxy.py --master /dev/ttyS0:57600 --out udp://
+
+## 11. 启动ros后台
+修改启动文件  
+
+    /opt/ros/kinetic/share/mavros/px4.launch
+
+    roslaunch mavros px4.launch 
+
+## 12. 新建个工程抄下官方提供的代码
+```
+cd ~/catkin_workspace/
+#新建工程
+
+#抄代码
+
+#修改cmakelist
+
+#编译
+
+```
+## 13. 注意！！！！！
+执行后续步骤，务必确保安全，在执行程序前，务必禁用安全开关，当屏幕出现错误安全开关未打开之后，用重物压住四旋翼，手保持在安全开关上， 按住约2s后飞机会启动！！  
+# 飞机会自行解锁启动！！
+本文仅在于帮助您部署ros与px4环境，ros相关开发请看其他文献。
+
+
+ ## 14. 飞机配置
+### 硬件  
+pixhawk（apm 无法实现一些功能，本文仅以pixhawk为例）  
+安全开关，sd卡，脚架，蜂鸣器  
+px4 flow  
+dji 330机架  
+dji 四轴动力套装  
+3s电池  
+
+### 固件  
+pixhawk firmware（非ardupolit）
+
+### 地面站  
+QGroundContral（非MissionPlanner）
+
+## 15. 飞机起飞准备
+非本文关注内容，请自行搜索相关内容，并保证可以在手动控制下实现稳定飞行。
+
+## 16. 硬件连接
+px4的串口2与树莓派gpio串口定义位置相连即可，波特率默认为57600，如有需要自行在地面站修改。
+
+## 17. 启动例程
+# 执行此步骤前，请务必认真阅读##13!
+
+执行以下命令：
+```
+rosrun mavpi mavpi_node
+```
+
+## 至此四旋翼如果正常解锁并飞行，则设置成功，如果出现问题，请检查以上步骤是否有错误。
+由于系统较为复杂，所以不保证以上内容长期可用，请以官方说明为准！	
