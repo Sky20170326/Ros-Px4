@@ -9,7 +9,8 @@
 #include <mavros_msgs/CommandBool.h>
 #include <mavros_msgs/SetMode.h>
 #include <mavros_msgs/State.h>
-#include <boost/asio.hpp>
+#include <mavros_msgs/PositionTarget.h>
+//#include <boost/asio.hpp>
 
 #define simulator
 
@@ -36,10 +37,16 @@ int main(int argc, char **argv)
 
         ros::Subscriber state_sub = nh.subscribe<mavros_msgs::State>
                                             ("mavros/state", 10, state_cb);
+
         ros::Publisher local_pos_pub = nh.advertise<geometry_msgs::PoseStamped>
                                                ("mavros/setpoint_position/local", 10);
+
+        //ros::Publisher local_pos_pub = nh.advertise<mavros_msgs::PositionTarget>
+        //                                       ("mavros/setpoint_raw/local",10);
+
         ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>
                                                    ("mavros/cmd/arming");
+
         ros::ServiceClient set_mode_client = nh.serviceClient<mavros_msgs::SetMode>
                                                      ("mavros/set_mode");
 
@@ -83,7 +90,7 @@ int main(int argc, char **argv)
                 }
                 else
                 {
-                    //check system armd
+                        //check system armd
                         if( !current_state.armed &&
                             (ros::Time::now() - last_request > ros::Duration(5.0)))
                         {
