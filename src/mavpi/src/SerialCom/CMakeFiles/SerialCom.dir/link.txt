@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/SerialCom.dir/test.cpp.o CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o  -o SerialCom -rdynamic -lboost_system 

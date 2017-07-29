@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+fcntl.h
+-
+asm/termios.h
+-
+SerialCom.hpp
+/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp
+
+/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+fcntl.h
+-
+asm/termios.h
+-
+iostream
+-
+
+/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp
+string
+-
+iostream
+-
+../SerialCom.hpp
+/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp
+

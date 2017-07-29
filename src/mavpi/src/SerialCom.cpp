@@ -1,80 +1,45 @@
-//#include "stdafx.h"
-#include <string>
-#include <vector>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <asm/termios.h>
 #include "SerialCom.hpp"
 
+//using namespace std;
 
-//Define Constructor function
-MySerialPort::MySerialPort( const any_type &port_name ):pSerialPort( NULL )
+
+flSerialPort::flSerialPort(char * portName,int bandRate)
 {
-        pSerialPort = new serial_port( m_ios );
-    if ( pSerialPort ){
-        init_port( port_name, 8 );
+    fd = open(portName, O_RDWR | O_NOCTTY);
+    if(fd < 0) {
+            perror(portName);
+            throw "open dev err!";
     }
 }
 
-//Define destructor function
-MySerialPort::~MySerialPort()
+bool flSerialPort::flwrite(string str)
 {
-       if( pSerialPort )
-       {
-               delete pSerialPort;
-       }
-}
-
-
-//Initialize port
-bool MySerialPort::init_port( const any_type port, const unsigned int char_size )
-{
-    //New not success
-    if ( !pSerialPort ){
-        return false;
+    //todo: str2buf
+    len = write(fd, buf, sizeof(buf)); /* 向串口写入字符串 */
+    if (len < 0) {
+            throw "write data error";
     }
-
-        //Open Serial port object
-        pSerialPort->open( port, ec );
-
-
-    //Set port argument
-    pSerialPort->set_option( serial_port::baud_rate( 9600 ), ec );
-    pSerialPort->set_option( serial_port::flow_control( serial_port::flow_control::none ), ec );
-    pSerialPort->set_option( serial_port::parity( serial_port::parity::none ), ec );
-    pSerialPort->set_option( serial_port::stop_bits( serial_port::stop_bits::one ), ec);
-    pSerialPort->set_option( serial_port::character_size( char_size ), ec);
-
-    return true;
 }
 
-
-//Define wirte_to_serial to write data to serial
-void MySerialPort::write_to_serial( const any_type data )
+bool flSerialPort::flread()
 {
-        size_t len = write( *pSerialPort, buffer( data ), ec );
-        cout << len << "\t" << data << "\n";
-}
-
-void MySerialPort::handle_read( char buf[], boost::system::error_code ec,
-    std::size_t bytes_transferred )
-{
-    cout << "\nhandle_read: ";
-    cout.write(buf, bytes_transferred);
-}
-
-
-
-//Read data from the serial
-void MySerialPort::read_from_serial()
-{
-       char v[10];
-       async_read( *pSerialPort, buffer(v), boost::bind( &MySerialPort::handle_read, this, v, _1, _2) );
-}
-
-
-//Call handle_read function when async function read complete or come out exception
-void MySerialPort::call_handle()
-{
-        //There can use deadline_timer to cancle serial_port read data
-
-    //Wait for call callback function
-    m_ios.run();
+    char buff[30];
+    len = read(fd, buff, sizeof(buff)); /* 在串口读入字符串 */
+    if (len < 0) {
+            throw "read error";
+            //return -1;
+            return false;
+    }
+    if(len > 0)
+    {
+        str = string(buff);
+        return true;
+        //printf("%d : %s\n",len, buf); /* 打印从串口读出的字符串 */
+    }
+    return false;
 }

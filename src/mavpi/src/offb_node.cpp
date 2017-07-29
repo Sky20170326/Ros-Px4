@@ -30,8 +30,21 @@ geometry_msgs::PoseStamped xyz2Position (float x,float y,float z)
         return pose;
 }
 
+#include "SerialCom.hpp"
+void serialTest()
+{
+    MySerialPort my_Sp( "/dev/ttyUSB0");
+    my_Sp.write_to_serial( "SerialPort" );
+    my_Sp.read_from_serial();
+    my_Sp.call_handle();
+}
+
 int main(int argc, char **argv)
 {
+    serialTest();
+        //fortest
+        while(1) ;
+
         ros::init(argc, argv, "offb_node");
         ros::NodeHandle nh;
 
@@ -42,7 +55,7 @@ int main(int argc, char **argv)
                                                ("mavros/setpoint_position/local", 10);
 
         //ros::Publisher local_pos_pub = nh.advertise<mavros_msgs::PositionTarget>
-        //                                       ("mavros/setpoint_raw/local",10);
+        //    ("mavros/setpoint_raw/local",10);
 
         ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>
                                                    ("mavros/cmd/arming");

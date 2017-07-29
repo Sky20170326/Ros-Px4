@@ -4,6 +4,7 @@
 CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o: /home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp
 CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o: /home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp
 
+CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Point.h
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose.h

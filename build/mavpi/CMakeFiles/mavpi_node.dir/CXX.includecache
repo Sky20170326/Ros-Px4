@@ -35,6 +35,8 @@ mavros_msgs/State.h
 -
 mavros_msgs/PositionTarget.h
 -
+SerialCom.hpp
+/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
 string

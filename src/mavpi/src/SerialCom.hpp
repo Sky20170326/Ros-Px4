@@ -1,47 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <asm/termios.h>
+//#define DEV_NAME "/dev/ttyUSB1"
 #include <iostream>
-#include <boost/asio.hpp>
-#include <boost/bind.hpp>
 
 using namespace std;
-using namespace boost::asio;
 
 typedef string any_type;
 
 
-class MySerialPort
+class flSerialPort
 {
-private:
-    //Initialize port
-    bool init_port( const any_type port, const unsigned int char_size );
+//////////////////////////////
 public:
-    //Constructor
-    //Destructor
-        MySerialPort( const any_type &port_name );
-    ~MySerialPort();
+flSerialPort(char * portName,
+             int bandRate);
 
-    //Write some data to port
-    void write_to_serial( const any_type data );
+bool flwrite(string str);
 
-    //Read data from port which write data just now
-    void read_from_serial();
+bool flread();
 
-    //The asyanc callback function of asyanc_read
-    void handle_read( char buf[], boost::system::error_code ec,
-        std::size_t bytes_transferred );
+string str;
 
-    //To Call io_service::run function to call asyanc callback funciton
-    void call_handle();
-
+/////////////////////////////
 private:
-    //io_service Object
-    io_service m_ios;
+int fd;
+int len, i,ret;
+char buf[30];
 
-    //Serial port Object
-    serial_port *pSerialPort;
-
-    //For save com name
-    any_type m_port;
-
-    //Serial_port function exception
-    boost::system::error_code ec;
 };

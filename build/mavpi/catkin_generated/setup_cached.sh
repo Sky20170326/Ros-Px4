@@ -11,5 +11,5 @@ export CMAKE_PREFIX_PATH="/home/feilong/Ros-Cat/devel/.private/mavpi:$CMAKE_PREF
 export LD_LIBRARY_PATH="/home/feilong/Ros-Cat/devel/.private/mavpi/lib:$LD_LIBRARY_PATH"
 export PKG_CONFIG_PATH="/home/feilong/Ros-Cat/devel/.private/mavpi/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/feilong/Ros-Cat/build/mavpi"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/feilong/Ros-Cat/devel/.private/mavpi/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/feilong/Ros-Cat/devel/.private/mavpi/share/common-lisp"
 export ROS_PACKAGE_PATH="/home/feilong/Ros-Cat/src/mavpi:$ROS_PACKAGE_PATH"
