@@ -1,6 +1,11 @@
 [
 {
   "directory": "/home/feilong/Ros-Cat/build/mavpi",
+  "command": "/usr/lib/ccache/c++   -DROSCONSOLE_BACKEND_LOG4CXX -DROS_PACKAGE_NAME=\\\"mavpi\\\" -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3    -o CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o -c /home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp",
+  "file": "/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp"
+},
+{
+  "directory": "/home/feilong/Ros-Cat/build/mavpi",
   "command": "/usr/lib/ccache/c++   -DROSCONSOLE_BACKEND_LOG4CXX -DROS_PACKAGE_NAME=\\\"mavpi\\\" -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3    -o CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o -c /home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp",
   "file": "/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp"
 },

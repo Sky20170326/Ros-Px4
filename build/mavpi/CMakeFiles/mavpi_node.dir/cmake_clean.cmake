@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o"
   "CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o"
   "/home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node.pdb"
   "/home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node"

@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp
+string
+-
+vector
+-
+SerialCom.hpp
+/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp
+
+/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp
+iostream
+-
+boost/asio.hpp
+-
+boost/bind.hpp
+-
+
 /home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp
 ros/ros.h
 -
@@ -17,7 +33,7 @@ mavros_msgs/SetMode.h
 -
 mavros_msgs/State.h
 -
-boost/asio.hpp
+mavros_msgs/PositionTarget.h
 -
 
 /opt/ros/kinetic/include/geometry_msgs/Point.h
@@ -92,6 +108,22 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
+/opt/ros/kinetic/include/geometry_msgs/Vector3.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+
 /opt/ros/kinetic/include/mavros_msgs/CommandBool.h
 ros/service_traits.h
 -
@@ -130,6 +162,30 @@ ros/serialization.h
 ros/builtin_message_traits.h
 -
 ros/message_operations.h
+-
+
+/opt/ros/kinetic/include/mavros_msgs/PositionTarget.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/Header.h
+-
+geometry_msgs/Point.h
+-
+geometry_msgs/Vector3.h
+-
+geometry_msgs/Vector3.h
 -
 
 /opt/ros/kinetic/include/mavros_msgs/SetMode.h

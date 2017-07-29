@@ -1,0 +1,24 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+MySerialPort	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^MySerialPort::MySerialPort( const any_type &port_name ):pSerialPort( NULL )$/;"	function	line:8	class:MySerialPort	signature:( const any_type &port_name )
+~MySerialPort	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^MySerialPort::~MySerialPort()$/;"	function	line:17	class:MySerialPort	signature:()
+init_port	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^bool MySerialPort::init_port( const any_type port, const unsigned int char_size )$/;"	function	line:27	class:MySerialPort	signature:( const any_type port, const unsigned int char_size )
+write_to_serial	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^void MySerialPort::write_to_serial( const any_type data )$/;"	function	line:50	class:MySerialPort	signature:( const any_type data )
+handle_read	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^void MySerialPort::handle_read( char buf[], boost::system::error_code ec,$/;"	function	line:56	class:MySerialPort	signature:( char buf[], boost::system::error_code ec, std::size_t bytes_transferred )
+read_from_serial	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^void MySerialPort::read_from_serial()$/;"	function	line:66	class:MySerialPort	signature:()
+call_handle	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^void MySerialPort::call_handle()$/;"	function	line:74	class:MySerialPort	signature:()
+any_type	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp	/^typedef string any_type;$/;"	typedef	line:8
+MySerialPort	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp	/^class MySerialPort$/;"	class	line:11
+m_ios	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp	/^    io_service m_ios;$/;"	member	line:37	class:MySerialPort
+pSerialPort	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp	/^    serial_port *pSerialPort;$/;"	member	line:40	class:MySerialPort
+m_port	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp	/^    any_type m_port;$/;"	member	line:43	class:MySerialPort
+ec	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp	/^    boost::system::error_code ec;$/;"	member	line:46	class:MySerialPort
+simulator	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^#define simulator$/;"	macro	line:15	file:
+current_state	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^mavros_msgs::State current_state;$/;"	variable	line:17
+state_cb	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void state_cb(const mavros_msgs::State::ConstPtr& msg){$/;"	function	line:18	signature:(const mavros_msgs::State::ConstPtr& msg)
+xyz2Position	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^geometry_msgs::PoseStamped xyz2Position (float x,float y,float z)$/;"	function	line:22	signature:(float x,float y,float z)
+main	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^int main(int argc, char **argv)$/;"	function	line:33	signature:(int argc, char **argv)

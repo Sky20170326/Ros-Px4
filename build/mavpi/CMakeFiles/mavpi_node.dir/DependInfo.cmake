@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp" "/home/feilong/Ros-Cat/build/mavpi/CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o"
   "/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp" "/home/feilong/Ros-Cat/build/mavpi/CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

@@ -997,6 +997,33 @@ gtest_main/fast:
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
+src/SerialCom.o: src/SerialCom.cpp.o
+
+.PHONY : src/SerialCom.o
+
+# target to build an object file
+src/SerialCom.cpp.o:
+	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o
+.PHONY : src/SerialCom.cpp.o
+
+src/SerialCom.i: src/SerialCom.cpp.i
+
+.PHONY : src/SerialCom.i
+
+# target to preprocess a source file
+src/SerialCom.cpp.i:
+	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.i
+.PHONY : src/SerialCom.cpp.i
+
+src/SerialCom.s: src/SerialCom.cpp.s
+
+.PHONY : src/SerialCom.s
+
+# target to generate assembly for a file
+src/SerialCom.cpp.s:
+	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.s
+.PHONY : src/SerialCom.cpp.s
+
 src/offb_node.o: src/offb_node.cpp.o
 
 .PHONY : src/offb_node.o
@@ -1101,6 +1128,9 @@ help:
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... src/SerialCom.o"
+	@echo "... src/SerialCom.i"
+	@echo "... src/SerialCom.s"
 	@echo "... src/offb_node.o"
 	@echo "... src/offb_node.i"
 	@echo "... src/offb_node.s"
