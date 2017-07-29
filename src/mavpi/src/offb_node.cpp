@@ -22,9 +22,9 @@ geometry_msgs::PoseStamped xyz2Position (float x,float y,float z)
 {
         geometry_msgs::PoseStamped pose;
 
-        pose.pose.position.x = 0;
-        pose.pose.position.y = 0;
-        pose.pose.position.z = 1.5;
+        pose.pose.position.x = x;
+        pose.pose.position.y = y;
+        pose.pose.position.z = z;
 
         return pose;
 }
@@ -107,7 +107,7 @@ int main(int argc, char **argv)
                 //pubpos
                 local_pos_pub.publish(xyz2Position (0,0,1.5));
                 //pubyaw
-                
+
 
                 ros::spinOnce();
                 rate.sleep();
