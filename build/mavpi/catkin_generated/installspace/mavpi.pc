@@ -1,8 +1,8 @@
-prefix=/home/pi/catkin_workspace/install
+prefix=/home/feilong/Ros-Cat/install
 
 Name: mavpi
 Description: Description of mavpi
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/pi/catkin_workspace/install/lib 
+Libs: -L/home/feilong/Ros-Cat/install/lib 
 Requires: 

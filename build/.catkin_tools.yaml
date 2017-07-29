@@ -1,0 +1,6 @@
+devel_space: /home/feilong/Ros-Cat/devel
+install: false
+install_space: /home/feilong/Ros-Cat/install
+profile: default
+source_space: /home/feilong/Ros-Cat/src
+workspace: /home/feilong/Ros-Cat

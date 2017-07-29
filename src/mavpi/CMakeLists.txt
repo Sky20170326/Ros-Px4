@@ -12,6 +12,11 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
 )
 
+## Find boost libraries
+find_package(Boost REQUIRED COMPONENTS
+  system
+)
+
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
@@ -117,6 +122,7 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
+  ${Boost_INCLUDE_DIR}
 )
 
 ## Declare a C++ library
@@ -148,6 +154,7 @@ add_executable(${PROJECT_NAME}_node src/offb_node.cpp)
 ## Specify libraries to link a library or executable target against
  target_link_libraries(${PROJECT_NAME}_node
    ${catkin_LIBRARIES}
+   ${Boost_LIBRARIES}
  )
 
 #############

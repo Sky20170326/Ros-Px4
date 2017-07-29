@@ -1,0 +1,5 @@
+mavpi
+/home/feilong/Ros-Cat/devel/.private/mavpi/share/mavpi/cmake/mavpiConfig.cmake /home/feilong/Ros-Cat/devel/share/mavpi/cmake/mavpiConfig.cmake
+/home/feilong/Ros-Cat/devel/.private/mavpi/share/mavpi/cmake/mavpiConfig-version.cmake /home/feilong/Ros-Cat/devel/share/mavpi/cmake/mavpiConfig-version.cmake
+/home/feilong/Ros-Cat/devel/.private/mavpi/lib/pkgconfig/mavpi.pc /home/feilong/Ros-Cat/devel/lib/pkgconfig/mavpi.pc
+/home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node /home/feilong/Ros-Cat/devel/lib/mavpi/mavpi_node

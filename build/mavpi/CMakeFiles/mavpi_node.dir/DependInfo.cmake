@@ -4,14 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pi/catkin_workspace/src/mavpi/src/offb_node.cpp" "/home/pi/catkin_workspace/build/mavpi/CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o"
+  "/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp" "/home/feilong/Ros-Cat/build/mavpi/CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
   "ROSCONSOLE_BACKEND_LOG4CXX"
-  "ROS_BUILD_SHARED_LIBS=1"
   "ROS_PACKAGE_NAME=\"mavpi\""
   )
 

@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "mavpi"
-PROJECT_SPACE_DIR = "/home/pi/catkin_workspace/devel"
+PROJECT_SPACE_DIR = "/home/feilong/Ros-Cat/devel/.private/mavpi"
 PROJECT_VERSION = "0.0.0"

@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/feilong/Ros-Cat/devel/.private/catkin_tools_prebuild/setup.sh
