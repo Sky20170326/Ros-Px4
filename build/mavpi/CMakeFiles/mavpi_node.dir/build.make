@@ -57,33 +57,57 @@ include CMakeFiles/mavpi_node.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/mavpi_node.dir/flags.make
 
-CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o: CMakeFiles/mavpi_node.dir/flags.make
-CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o: /home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/feilong/Ros-Cat/build/mavpi/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o"
-	/usr/lib/ccache/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o -c /home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp
+CMakeFiles/mavpi_node.dir/src/timeout.cpp.o: CMakeFiles/mavpi_node.dir/flags.make
+CMakeFiles/mavpi_node.dir/src/timeout.cpp.o: /home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/feilong/Ros-Cat/build/mavpi/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mavpi_node.dir/src/timeout.cpp.o"
+	/usr/lib/ccache/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mavpi_node.dir/src/timeout.cpp.o -c /home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp
 
-CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.i"
-	/usr/lib/ccache/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp > CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.i
+CMakeFiles/mavpi_node.dir/src/timeout.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mavpi_node.dir/src/timeout.cpp.i"
+	/usr/lib/ccache/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp > CMakeFiles/mavpi_node.dir/src/timeout.cpp.i
 
-CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.s"
-	/usr/lib/ccache/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp -o CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.s
+CMakeFiles/mavpi_node.dir/src/timeout.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mavpi_node.dir/src/timeout.cpp.s"
+	/usr/lib/ccache/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp -o CMakeFiles/mavpi_node.dir/src/timeout.cpp.s
 
-CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o.requires:
+CMakeFiles/mavpi_node.dir/src/timeout.cpp.o.requires:
 
-.PHONY : CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o.requires
+.PHONY : CMakeFiles/mavpi_node.dir/src/timeout.cpp.o.requires
 
-CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o.provides: CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o.requires
-	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o.provides.build
-.PHONY : CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o.provides
+CMakeFiles/mavpi_node.dir/src/timeout.cpp.o.provides: CMakeFiles/mavpi_node.dir/src/timeout.cpp.o.requires
+	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/timeout.cpp.o.provides.build
+.PHONY : CMakeFiles/mavpi_node.dir/src/timeout.cpp.o.provides
 
-CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o.provides.build: CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o
+CMakeFiles/mavpi_node.dir/src/timeout.cpp.o.provides.build: CMakeFiles/mavpi_node.dir/src/timeout.cpp.o
+
+
+CMakeFiles/mavpi_node.dir/src/serial.cpp.o: CMakeFiles/mavpi_node.dir/flags.make
+CMakeFiles/mavpi_node.dir/src/serial.cpp.o: /home/feilong/Ros-Cat/src/mavpi/src/serial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/feilong/Ros-Cat/build/mavpi/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/mavpi_node.dir/src/serial.cpp.o"
+	/usr/lib/ccache/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mavpi_node.dir/src/serial.cpp.o -c /home/feilong/Ros-Cat/src/mavpi/src/serial.cpp
+
+CMakeFiles/mavpi_node.dir/src/serial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mavpi_node.dir/src/serial.cpp.i"
+	/usr/lib/ccache/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/feilong/Ros-Cat/src/mavpi/src/serial.cpp > CMakeFiles/mavpi_node.dir/src/serial.cpp.i
+
+CMakeFiles/mavpi_node.dir/src/serial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mavpi_node.dir/src/serial.cpp.s"
+	/usr/lib/ccache/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/feilong/Ros-Cat/src/mavpi/src/serial.cpp -o CMakeFiles/mavpi_node.dir/src/serial.cpp.s
+
+CMakeFiles/mavpi_node.dir/src/serial.cpp.o.requires:
+
+.PHONY : CMakeFiles/mavpi_node.dir/src/serial.cpp.o.requires
+
+CMakeFiles/mavpi_node.dir/src/serial.cpp.o.provides: CMakeFiles/mavpi_node.dir/src/serial.cpp.o.requires
+	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/serial.cpp.o.provides.build
+.PHONY : CMakeFiles/mavpi_node.dir/src/serial.cpp.o.provides
+
+CMakeFiles/mavpi_node.dir/src/serial.cpp.o.provides.build: CMakeFiles/mavpi_node.dir/src/serial.cpp.o
 
 
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: CMakeFiles/mavpi_node.dir/flags.make
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/feilong/Ros-Cat/build/mavpi/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/feilong/Ros-Cat/build/mavpi/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o"
 	/usr/lib/ccache/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o -c /home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp
 
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.i: cmake_force
@@ -105,16 +129,44 @@ CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o.provides: CMakeFiles/mavpi_node.di
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o.provides.build: CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o
 
 
+CMakeFiles/mavpi_node.dir/src/protocol.c.o: CMakeFiles/mavpi_node.dir/flags.make
+CMakeFiles/mavpi_node.dir/src/protocol.c.o: /home/feilong/Ros-Cat/src/mavpi/src/protocol.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/feilong/Ros-Cat/build/mavpi/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/mavpi_node.dir/src/protocol.c.o"
+	/usr/lib/ccache/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mavpi_node.dir/src/protocol.c.o   -c /home/feilong/Ros-Cat/src/mavpi/src/protocol.c
+
+CMakeFiles/mavpi_node.dir/src/protocol.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mavpi_node.dir/src/protocol.c.i"
+	/usr/lib/ccache/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/feilong/Ros-Cat/src/mavpi/src/protocol.c > CMakeFiles/mavpi_node.dir/src/protocol.c.i
+
+CMakeFiles/mavpi_node.dir/src/protocol.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mavpi_node.dir/src/protocol.c.s"
+	/usr/lib/ccache/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/feilong/Ros-Cat/src/mavpi/src/protocol.c -o CMakeFiles/mavpi_node.dir/src/protocol.c.s
+
+CMakeFiles/mavpi_node.dir/src/protocol.c.o.requires:
+
+.PHONY : CMakeFiles/mavpi_node.dir/src/protocol.c.o.requires
+
+CMakeFiles/mavpi_node.dir/src/protocol.c.o.provides: CMakeFiles/mavpi_node.dir/src/protocol.c.o.requires
+	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/protocol.c.o.provides.build
+.PHONY : CMakeFiles/mavpi_node.dir/src/protocol.c.o.provides
+
+CMakeFiles/mavpi_node.dir/src/protocol.c.o.provides.build: CMakeFiles/mavpi_node.dir/src/protocol.c.o
+
+
 # Object files for target mavpi_node
 mavpi_node_OBJECTS = \
-"CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o" \
-"CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o"
+"CMakeFiles/mavpi_node.dir/src/timeout.cpp.o" \
+"CMakeFiles/mavpi_node.dir/src/serial.cpp.o" \
+"CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o" \
+"CMakeFiles/mavpi_node.dir/src/protocol.c.o"
 
 # External object files for target mavpi_node
 mavpi_node_EXTERNAL_OBJECTS =
 
-/home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node: CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o
+/home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node: CMakeFiles/mavpi_node.dir/src/timeout.cpp.o
+/home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node: CMakeFiles/mavpi_node.dir/src/serial.cpp.o
 /home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node: CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o
+/home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node: CMakeFiles/mavpi_node.dir/src/protocol.c.o
 /home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node: CMakeFiles/mavpi_node.dir/build.make
 /home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node: /opt/ros/kinetic/lib/libmavros.so
 /home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node: /opt/ros/kinetic/lib/libclass_loader.so
@@ -159,7 +211,7 @@ mavpi_node_EXTERNAL_OBJECTS =
 /home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node: /usr/lib/x86_64-linux-gnu/libpthread.so
 /home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
 /home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node: CMakeFiles/mavpi_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/feilong/Ros-Cat/build/mavpi/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/feilong/Ros-Cat/build/mavpi/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable /home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mavpi_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -167,8 +219,10 @@ CMakeFiles/mavpi_node.dir/build: /home/feilong/Ros-Cat/devel/.private/mavpi/lib/
 
 .PHONY : CMakeFiles/mavpi_node.dir/build
 
-CMakeFiles/mavpi_node.dir/requires: CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o.requires
+CMakeFiles/mavpi_node.dir/requires: CMakeFiles/mavpi_node.dir/src/timeout.cpp.o.requires
+CMakeFiles/mavpi_node.dir/requires: CMakeFiles/mavpi_node.dir/src/serial.cpp.o.requires
 CMakeFiles/mavpi_node.dir/requires: CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o.requires
+CMakeFiles/mavpi_node.dir/requires: CMakeFiles/mavpi_node.dir/src/protocol.c.o.requires
 
 .PHONY : CMakeFiles/mavpi_node.dir/requires
 

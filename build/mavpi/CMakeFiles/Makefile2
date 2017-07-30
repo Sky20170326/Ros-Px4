@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/feilong/Ros-Cat/build/mavpi
 CMakeFiles/mavpi_node.dir/all:
 	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/depend
 	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/feilong/Ros-Cat/build/mavpi/CMakeFiles --progress-num=5,6,7 "Built target mavpi_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/feilong/Ros-Cat/build/mavpi/CMakeFiles --progress-num=5,6,7,8,9 "Built target mavpi_node"
 .PHONY : CMakeFiles/mavpi_node.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/mavpi_node.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mavpi_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/feilong/Ros-Cat/build/mavpi/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/feilong/Ros-Cat/build/mavpi/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/mavpi_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/feilong/Ros-Cat/build/mavpi/CMakeFiles 0
 .PHONY : CMakeFiles/mavpi_node.dir/rule

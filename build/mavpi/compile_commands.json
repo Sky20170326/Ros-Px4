@@ -1,13 +1,23 @@
 [
 {
   "directory": "/home/feilong/Ros-Cat/build/mavpi",
-  "command": "/usr/lib/ccache/c++   -DROSCONSOLE_BACKEND_LOG4CXX -DROS_PACKAGE_NAME=\\\"mavpi\\\" -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3    -o CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o -c /home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp",
-  "file": "/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp"
+  "command": "/usr/lib/ccache/c++   -DROSCONSOLE_BACKEND_LOG4CXX -DROS_PACKAGE_NAME=\\\"mavpi\\\" -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3    -o CMakeFiles/mavpi_node.dir/src/timeout.cpp.o -c /home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp",
+  "file": "/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp"
+},
+{
+  "directory": "/home/feilong/Ros-Cat/build/mavpi",
+  "command": "/usr/lib/ccache/c++   -DROSCONSOLE_BACKEND_LOG4CXX -DROS_PACKAGE_NAME=\\\"mavpi\\\" -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3    -o CMakeFiles/mavpi_node.dir/src/serial.cpp.o -c /home/feilong/Ros-Cat/src/mavpi/src/serial.cpp",
+  "file": "/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp"
 },
 {
   "directory": "/home/feilong/Ros-Cat/build/mavpi",
   "command": "/usr/lib/ccache/c++   -DROSCONSOLE_BACKEND_LOG4CXX -DROS_PACKAGE_NAME=\\\"mavpi\\\" -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3    -o CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o -c /home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp",
   "file": "/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp"
+},
+{
+  "directory": "/home/feilong/Ros-Cat/build/mavpi",
+  "command": "/usr/lib/ccache/cc  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_PACKAGE_NAME=\\\"mavpi\\\" -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/eigen3    -o CMakeFiles/mavpi_node.dir/src/protocol.c.o   -c /home/feilong/Ros-Cat/src/mavpi/src/protocol.c",
+  "file": "/home/feilong/Ros-Cat/src/mavpi/src/protocol.c"
 },
 {
   "directory": "/home/feilong/Ros-Cat/build/mavpi/gtest",

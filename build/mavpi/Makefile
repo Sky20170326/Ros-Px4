@@ -997,33 +997,6 @@ gtest_main/fast:
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
-src/SerialCom.o: src/SerialCom.cpp.o
-
-.PHONY : src/SerialCom.o
-
-# target to build an object file
-src/SerialCom.cpp.o:
-	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.o
-.PHONY : src/SerialCom.cpp.o
-
-src/SerialCom.i: src/SerialCom.cpp.i
-
-.PHONY : src/SerialCom.i
-
-# target to preprocess a source file
-src/SerialCom.cpp.i:
-	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.i
-.PHONY : src/SerialCom.cpp.i
-
-src/SerialCom.s: src/SerialCom.cpp.s
-
-.PHONY : src/SerialCom.s
-
-# target to generate assembly for a file
-src/SerialCom.cpp.s:
-	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/SerialCom.cpp.s
-.PHONY : src/SerialCom.cpp.s
-
 src/offb_node.o: src/offb_node.cpp.o
 
 .PHONY : src/offb_node.o
@@ -1050,6 +1023,87 @@ src/offb_node.s: src/offb_node.cpp.s
 src/offb_node.cpp.s:
 	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/offb_node.cpp.s
 .PHONY : src/offb_node.cpp.s
+
+src/protocol.o: src/protocol.c.o
+
+.PHONY : src/protocol.o
+
+# target to build an object file
+src/protocol.c.o:
+	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/protocol.c.o
+.PHONY : src/protocol.c.o
+
+src/protocol.i: src/protocol.c.i
+
+.PHONY : src/protocol.i
+
+# target to preprocess a source file
+src/protocol.c.i:
+	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/protocol.c.i
+.PHONY : src/protocol.c.i
+
+src/protocol.s: src/protocol.c.s
+
+.PHONY : src/protocol.s
+
+# target to generate assembly for a file
+src/protocol.c.s:
+	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/protocol.c.s
+.PHONY : src/protocol.c.s
+
+src/serial.o: src/serial.cpp.o
+
+.PHONY : src/serial.o
+
+# target to build an object file
+src/serial.cpp.o:
+	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/serial.cpp.o
+.PHONY : src/serial.cpp.o
+
+src/serial.i: src/serial.cpp.i
+
+.PHONY : src/serial.i
+
+# target to preprocess a source file
+src/serial.cpp.i:
+	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/serial.cpp.i
+.PHONY : src/serial.cpp.i
+
+src/serial.s: src/serial.cpp.s
+
+.PHONY : src/serial.s
+
+# target to generate assembly for a file
+src/serial.cpp.s:
+	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/serial.cpp.s
+.PHONY : src/serial.cpp.s
+
+src/timeout.o: src/timeout.cpp.o
+
+.PHONY : src/timeout.o
+
+# target to build an object file
+src/timeout.cpp.o:
+	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/timeout.cpp.o
+.PHONY : src/timeout.cpp.o
+
+src/timeout.i: src/timeout.cpp.i
+
+.PHONY : src/timeout.i
+
+# target to preprocess a source file
+src/timeout.cpp.i:
+	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/timeout.cpp.i
+.PHONY : src/timeout.cpp.i
+
+src/timeout.s: src/timeout.cpp.s
+
+.PHONY : src/timeout.s
+
+# target to generate assembly for a file
+src/timeout.cpp.s:
+	$(MAKE) -f CMakeFiles/mavpi_node.dir/build.make CMakeFiles/mavpi_node.dir/src/timeout.cpp.s
+.PHONY : src/timeout.cpp.s
 
 # Help Target
 help:
@@ -1128,12 +1182,18 @@ help:
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... gtest"
 	@echo "... gtest_main"
-	@echo "... src/SerialCom.o"
-	@echo "... src/SerialCom.i"
-	@echo "... src/SerialCom.s"
 	@echo "... src/offb_node.o"
 	@echo "... src/offb_node.i"
 	@echo "... src/offb_node.s"
+	@echo "... src/protocol.o"
+	@echo "... src/protocol.i"
+	@echo "... src/protocol.s"
+	@echo "... src/serial.o"
+	@echo "... src/serial.i"
+	@echo "... src/serial.s"
+	@echo "... src/timeout.o"
+	@echo "... src/timeout.i"
+	@echo "... src/timeout.s"
 .PHONY : help
 
 

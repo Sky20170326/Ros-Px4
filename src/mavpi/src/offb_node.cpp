@@ -10,14 +10,34 @@
 #include <mavros_msgs/SetMode.h>
 #include <mavros_msgs/State.h>
 #include <mavros_msgs/PositionTarget.h>
+//#include <sensor_msgs/State.h>
+#include <sensor_msgs/Imu.h>
 //#include <boost/asio.hpp>
+////////////////////////////////////////
+#include "serial.h"
+#include "protocol.h"
 
-#define simulator
+using namespace std;
+
+//#define simulator
 
 mavros_msgs::State current_state;
 void state_cb(const mavros_msgs::State::ConstPtr& msg){
         current_state = *msg;
 }
+
+sensor_msgs::Imu imu_status;
+void imu_state_cb(const sensor_msgs::Imu::ConstPtr& msg)
+{
+        //ROS_INFO("Imu Seq: [%d]", msg->header.seq);
+        imu_status = *msg;
+}
+/*
+   void chatterCallback(const sensor_msgs::Imu::ConstPtr& msg)
+   {
+        ROS_INFO("Imu Seq: [%d]", msg->header.seq);
+        ROS_INFO("Imu Orientation x: [%f], y: [%f], z: [%f], w: [%f]", msg->orientation.x,msg->orientation.y,msg->orientation.z,msg->orientation.w);
+   }*/
 
 geometry_msgs::PoseStamped xyz2Position (float x,float y,float z)
 {
@@ -30,6 +50,13 @@ geometry_msgs::PoseStamped xyz2Position (float x,float y,float z)
         return pose;
 }
 
+void quad(float q0,float q1,float q2,float q3,float *pitch,float *roll,float *yaw)
+{
+        *pitch = asin(-2 * q1 * q3 + 2 * q0* q2)* 57.3; // pitch
+        *roll  = atan2(2 * q2 * q3 + 2 * q0 * q1, -2 * q1 * q1 - 2 * q2* q2 + 1)* 57.3; // roll
+        *yaw   = atan2(2*(q1*q2 + q0*q3),q0*q0+q1*q1-q2*q2-q3*q3) * 57.3;   //yaw
+}
+
 int main(int argc, char **argv)
 {
         ros::init(argc, argv, "offb_node");
@@ -37,6 +64,12 @@ int main(int argc, char **argv)
 
         ros::Subscriber state_sub = nh.subscribe<mavros_msgs::State>
                                             ("mavros/state", 10, state_cb);
+
+        ros::Subscriber imu_sub = nh.subscribe<sensor_msgs::Imu>
+                                          ("mavros/imu/data", 10, imu_state_cb);
+
+        ros::Subscriber pos_sub = nh.subscribe<sensor_msgs::Imu>
+                                          ("mavros/imu/data", 10, imu_state_cb);
 
         ros::Publisher local_pos_pub = nh.advertise<geometry_msgs::PoseStamped>
                                                ("mavros/setpoint_position/local", 10);
@@ -53,18 +86,23 @@ int main(int argc, char **argv)
         //the setpoint publishing rate MUST be faster than 2Hz
         ros::Rate rate(20.0);
 
+        ROS_INFO("connecting...");
         // wait for FCU connection
         while(ros::ok() && current_state.connected) {
+                cout << "wait connect" << endl;
                 ros::spinOnce();
                 rate.sleep();
         }
+        ROS_INFO("connected!");
 
+        ROS_INFO("pre offboard...");
         //send a few setpoints before starting
         for(int i = 100; ros::ok() && i > 0; --i) {
-                local_pos_pub.publish(xyz2Position(0,0,1.5));
+                local_pos_pub.publish(xyz2Position(0,0,0));
                 ros::spinOnce();
                 rate.sleep();
         }
+        ROS_INFO("pre fished!");
 
         mavros_msgs::SetMode offb_set_mode;
         offb_set_mode.request.custom_mode = "OFFBOARD";
@@ -105,7 +143,20 @@ int main(int argc, char **argv)
 
 #endif
 
-                //check serial data
+//cout arm & mode
+                cout << (current_state.armed == true) ? "0" : "1";
+                cout << '\t' << current_state.mode << endl;
+//show imu
+                cout << ros::Time::now() << '\t' << endl;
+                float a,b,c;
+                quad(imu_status.orientation.w,
+                     imu_status.orientation.x,
+                     imu_status.orientation.y,
+                     imu_status.orientation.z,
+                     &a, &b, &c);
+                ROS_INFO("x: [%f], y: [%f], z: [%f]",a,b,c);
+                
+                //check serial data7
 
                 //set status led
 
