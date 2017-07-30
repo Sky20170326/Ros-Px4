@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/feilong/Ros-Cat/src/mavpi/src/protocol.c
+protocol.h
+/home/feilong/Ros-Cat/src/mavpi/src/protocol.h
+
+/home/feilong/Ros-Cat/src/mavpi/src/protocol.h
+stdio.h
+-
+string.h
+-
+stdbool.h
+-
+

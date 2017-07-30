@@ -7,7 +7,13 @@ include_directories(
   ${Boost_INCLUDE_DIR}
 )
 
-add_executable(SerialCom test.cpp ../SerialCom.cpp)
+add_executable(
+          SerialCom
+          test.cpp
+          ../protocol.c
+          ../SerialCom.cpp
+        )
+
 target_link_libraries(SerialCom
   ${Boost_LIBRARIES}
 )

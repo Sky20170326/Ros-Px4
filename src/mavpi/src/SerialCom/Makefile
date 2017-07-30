@@ -150,6 +150,33 @@ home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.s:
 	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.s
 .PHONY : home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.s
 
+home/feilong/Ros-Cat/src/mavpi/src/protocol.o: home/feilong/Ros-Cat/src/mavpi/src/protocol.c.o
+
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/protocol.o
+
+# target to build an object file
+home/feilong/Ros-Cat/src/mavpi/src/protocol.c.o:
+	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/protocol.c.o
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/protocol.c.o
+
+home/feilong/Ros-Cat/src/mavpi/src/protocol.i: home/feilong/Ros-Cat/src/mavpi/src/protocol.c.i
+
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/protocol.i
+
+# target to preprocess a source file
+home/feilong/Ros-Cat/src/mavpi/src/protocol.c.i:
+	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/protocol.c.i
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/protocol.c.i
+
+home/feilong/Ros-Cat/src/mavpi/src/protocol.s: home/feilong/Ros-Cat/src/mavpi/src/protocol.c.s
+
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/protocol.s
+
+# target to generate assembly for a file
+home/feilong/Ros-Cat/src/mavpi/src/protocol.c.s:
+	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/protocol.c.s
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/protocol.c.s
+
 test.o: test.cpp.o
 
 .PHONY : test.o
@@ -189,6 +216,9 @@ help:
 	@echo "... home/feilong/Ros-Cat/src/mavpi/src/SerialCom.o"
 	@echo "... home/feilong/Ros-Cat/src/mavpi/src/SerialCom.i"
 	@echo "... home/feilong/Ros-Cat/src/mavpi/src/SerialCom.s"
+	@echo "... home/feilong/Ros-Cat/src/mavpi/src/protocol.o"
+	@echo "... home/feilong/Ros-Cat/src/mavpi/src/protocol.i"
+	@echo "... home/feilong/Ros-Cat/src/mavpi/src/protocol.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"

@@ -1,3 +1,4 @@
 -I.
 -I/opt/ros/kinetic/include
 -I/usr/include
+-I./src/mavpi/src/
