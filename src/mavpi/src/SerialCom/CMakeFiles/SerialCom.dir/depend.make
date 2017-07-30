@@ -7,7 +7,6 @@ CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/protocol.c.o: /home/
 CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o: /home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp
 CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o: /home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp
 
-CMakeFiles/SerialCom.dir/test.cpp.o: /home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp
 CMakeFiles/SerialCom.dir/test.cpp.o: test.cpp
 CMakeFiles/SerialCom.dir/test.cpp.o: /home/feilong/Ros-Cat/src/mavpi/src/protocol.h
 

@@ -39,8 +39,6 @@ string
 -
 iostream
 -
-../SerialCom.hpp
-/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp
 ../protocol.h
 /home/feilong/Ros-Cat/src/mavpi/src/protocol.h
 

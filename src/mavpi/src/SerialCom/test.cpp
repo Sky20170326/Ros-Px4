@@ -3,8 +3,6 @@
 #include <iostream>
 using namespace std;
 
-
-#include "../SerialCom.hpp"
 #include "../protocol.h"
 
 void error(string msg)
@@ -15,32 +13,6 @@ void error(string msg)
 void info(string msg)
 {
         cout << "info => " << msg << endl;
-}
-
-void serialtest()
-{
-        try{
-
-                flSerialPort serial((char*)"/dev/ttyUSB1",9600);
-
-                for (int i = 0; i < 255; i++)
-                {
-                        serial.flwrite("a");
-                }
-
-                while(1)
-                {
-                        if(serial.flread())
-                        {
-                                cout << serial.str.length() << " : "
-                                     << serial.str << endl;
-                        }
-                }
-        }
-        catch( char * e )
-        {
-                error(e);
-        }
 }
 
 void checkUp(char * s)
