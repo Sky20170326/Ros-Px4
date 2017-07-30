@@ -67,9 +67,16 @@ void quad(float q0,float q1,float q2,float q3,float *pitch,float *roll,float *ya
         *yaw   = atan2(2*(q1*q2 + q0*q3),q0*q0+q1*q1-q2*q2-q3*q3) * 57.3;   //yaw
 }
 
+serial serial;
+float rec_x = 0,
+      rec_y = 0,
+      rec_z = 0,
+      rec_yaw = 0;
 int main(int argc, char **argv)
 {
         ROS_INFO("System init ...");
+
+        serial.Open("/dev/ttyUSB0", 115200, 8, NO, 1);
 
         ros::init(argc, argv, "offb_node");
         ros::NodeHandle nh;
@@ -159,25 +166,30 @@ int main(int argc, char **argv)
 #endif
 
 
-                //check serial data7
+                //check serial data
+                
 
                 //set status led
 
                 //pubpos
                 local_pos_pub.publish(xyz2Position (0,0,1.5));
 
-                //pub to mcu
-                //cout arm & mode
-                cout << (current_state.armed == true) ? "0" : "1";
-                cout << '\t' << current_state.mode << endl;
-                //show imu
-                cout << ros::Time::now() << '\t' << endl;
+
+                //calc eular
                 float a,b,c;
                 quad(imu_status.orientation.w,
                      imu_status.orientation.x,
                      imu_status.orientation.y,
                      imu_status.orientation.z,
                      &a, &b, &c);
+                //pub to mcu
+                //cout arm & mode
+
+                cout << (current_state.armed == true) ? "0" : "1";
+                cout << '\t' << current_state.mode << endl;
+                //show imu
+                cout << ros::Time::now() << '\t' << endl;
+
                 ROS_INFO("Euler => x: [%f], y: [%f], z: [%f]",a,b,c);
 
 
@@ -189,6 +201,13 @@ int main(int argc, char **argv)
 
                 ROS_INFO("DIS => d: [%f]",dis_status.range);
 
+                download_s dp = makeDownPack(pos_status.pose.position.x,pos_status.pose.position.y,pos_status.pose.position.z,c,
+                                             0,0,0,0,
+                                             a,b,dis_status.range);
+                char * dt = packDownload(&dp);
+
+                ROS_INFO(dt);
+                serial.Write(dt, strlen(dt));
 
                 ros::spinOnce();
                 rate.sleep();

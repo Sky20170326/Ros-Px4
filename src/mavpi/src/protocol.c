@@ -51,7 +51,7 @@ int sumcheck(int * addr,int sumCheck)
         {
                 num += *addr++;
         }
-        return num % 100;
+        return abs(num % 100);
 }
 
 int upIndex = 0;
@@ -61,6 +61,7 @@ upload_s makeUpPack(float x,float y,float z,float yaw)
         upload_s p;
         p.head = (int)'r';
         p.index = upIndex++;
+        if(upIndex >= 100) upIndex = 0;
         p.x = (int)(x * DIV);
         p.y = (int)(y * DIV);
         p.z = (int)(z * DIV);
@@ -81,6 +82,7 @@ download_s makeDownPack(float x,float y,float z,float yaw,
         download_s p;
         p.head = (int)'s';
         p.index = downIndex++;
+        if(downIndex >= 100) downIndex = 0;
         p.x = (int)(x * DIV);
         p.y = (int)(y * DIV);
         p.z = (int)(z * DIV);
