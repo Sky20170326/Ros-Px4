@@ -6,12 +6,14 @@
 
 #include <ros/ros.h>
 #include <geometry_msgs/PoseStamped.h>
+#include <geometry_msgs/TwistStamped.h>
 #include <mavros_msgs/CommandBool.h>
 #include <mavros_msgs/SetMode.h>
 #include <mavros_msgs/State.h>
 #include <mavros_msgs/PositionTarget.h>
 //#include <sensor_msgs/State.h>
 #include <sensor_msgs/Imu.h>
+#include <sensor_msgs/Range.h>
 //#include <boost/asio.hpp>
 ////////////////////////////////////////
 #include "serial.h"
@@ -32,12 +34,20 @@ void imu_state_cb(const sensor_msgs::Imu::ConstPtr& msg)
         //ROS_INFO("Imu Seq: [%d]", msg->header.seq);
         imu_status = *msg;
 }
-/*
-   void chatterCallback(const sensor_msgs::Imu::ConstPtr& msg)
-   {
-        ROS_INFO("Imu Seq: [%d]", msg->header.seq);
-        ROS_INFO("Imu Orientation x: [%f], y: [%f], z: [%f], w: [%f]", msg->orientation.x,msg->orientation.y,msg->orientation.z,msg->orientation.w);
-   }*/
+
+geometry_msgs::PoseStamped pos_status;
+void pose_state_cb(const geometry_msgs::PoseStamped::ConstPtr& msg)
+{
+        //ROS_INFO("test");
+        pos_status = *msg;
+}
+
+sensor_msgs::Range dis_status;
+void dis_state_cb(const sensor_msgs::Range::ConstPtr& msg)
+{
+        //ROS_INFO("test");
+        dis_status = *msg;
+}
 
 geometry_msgs::PoseStamped xyz2Position (float x,float y,float z)
 {
@@ -59,6 +69,8 @@ void quad(float q0,float q1,float q2,float q3,float *pitch,float *roll,float *ya
 
 int main(int argc, char **argv)
 {
+        ROS_INFO("System init ...");
+
         ros::init(argc, argv, "offb_node");
         ros::NodeHandle nh;
 
@@ -68,8 +80,11 @@ int main(int argc, char **argv)
         ros::Subscriber imu_sub = nh.subscribe<sensor_msgs::Imu>
                                           ("mavros/imu/data", 10, imu_state_cb);
 
-        ros::Subscriber pos_sub = nh.subscribe<sensor_msgs::Imu>
-                                          ("mavros/imu/data", 10, imu_state_cb);
+        ros::Subscriber pos_sub = nh.subscribe<geometry_msgs::PoseStamped>
+                                          ("mavros/local_position/pose", 10, pose_state_cb);
+
+        ros::Subscriber dis_sub = nh.subscribe<sensor_msgs::Range>
+                                          ("mavros/px4flow/ground_distance", 10, dis_state_cb);
 
         ros::Publisher local_pos_pub = nh.advertise<geometry_msgs::PoseStamped>
                                                ("mavros/setpoint_position/local", 10);
@@ -86,7 +101,7 @@ int main(int argc, char **argv)
         //the setpoint publishing rate MUST be faster than 2Hz
         ros::Rate rate(20.0);
 
-        ROS_INFO("connecting...");
+        ROS_INFO("connecting with mavros ...");
         // wait for FCU connection
         while(ros::ok() && current_state.connected) {
                 cout << "wait connect" << endl;
@@ -154,8 +169,16 @@ int main(int argc, char **argv)
                      imu_status.orientation.y,
                      imu_status.orientation.z,
                      &a, &b, &c);
-                ROS_INFO("x: [%f], y: [%f], z: [%f]",a,b,c);
-                
+                ROS_INFO("Euler => x: [%f], y: [%f], z: [%f]",a,b,c);
+
+
+                ROS_INFO("POSE => x: [%f], y: [%f], z: [%f]",
+                         pos_status.pose.position.x,
+                         pos_status.pose.position.y,
+                         pos_status.pose.position.z
+                         );
+
+                ROS_INFO("DIS => d: [%f]",dis_status.range);
                 //check serial data7
 
                 //set status led

@@ -11,6 +11,8 @@ CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/geometry
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Pose.h
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/PoseStamped.h
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Quaternion.h
+CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Twist.h
+CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/TwistStamped.h
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Vector3.h
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/mavros_msgs/CommandBool.h
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/mavros_msgs/CommandBoolRequest.h
@@ -75,6 +77,7 @@ CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/ros/wall
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/sensor_msgs/Imu.h
+CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/sensor_msgs/Range.h
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
