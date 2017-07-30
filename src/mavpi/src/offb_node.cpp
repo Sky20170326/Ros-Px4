@@ -158,10 +158,19 @@ int main(int argc, char **argv)
 
 #endif
 
-//cout arm & mode
+
+                //check serial data7
+
+                //set status led
+
+                //pubpos
+                local_pos_pub.publish(xyz2Position (0,0,1.5));
+
+                //pub to mcu
+                //cout arm & mode
                 cout << (current_state.armed == true) ? "0" : "1";
                 cout << '\t' << current_state.mode << endl;
-//show imu
+                //show imu
                 cout << ros::Time::now() << '\t' << endl;
                 float a,b,c;
                 quad(imu_status.orientation.w,
@@ -179,15 +188,6 @@ int main(int argc, char **argv)
                          );
 
                 ROS_INFO("DIS => d: [%f]",dis_status.range);
-                //check serial data7
-
-                //set status led
-
-                //check timeout
-
-                //pubpos
-                local_pos_pub.publish(xyz2Position (0,0,1.5));
-                //pubyaw
 
 
                 ros::spinOnce();
