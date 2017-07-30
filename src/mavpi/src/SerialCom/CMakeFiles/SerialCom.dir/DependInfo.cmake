@@ -13,7 +13,8 @@ set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_TARGET_INCLUDE_PATH
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp" "/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o"
+  "/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp" "/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o"
+  "/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp" "/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o"
   "/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp" "/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/CMakeFiles/SerialCom.dir/test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

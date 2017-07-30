@@ -123,33 +123,6 @@ SerialCom/fast:
 	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/build
 .PHONY : SerialCom/fast
 
-home/feilong/Ros-Cat/src/mavpi/src/SerialCom.o: home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o
-
-.PHONY : home/feilong/Ros-Cat/src/mavpi/src/SerialCom.o
-
-# target to build an object file
-home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o:
-	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o
-.PHONY : home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o
-
-home/feilong/Ros-Cat/src/mavpi/src/SerialCom.i: home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.i
-
-.PHONY : home/feilong/Ros-Cat/src/mavpi/src/SerialCom.i
-
-# target to preprocess a source file
-home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.i:
-	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.i
-.PHONY : home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.i
-
-home/feilong/Ros-Cat/src/mavpi/src/SerialCom.s: home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.s
-
-.PHONY : home/feilong/Ros-Cat/src/mavpi/src/SerialCom.s
-
-# target to generate assembly for a file
-home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.s:
-	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.s
-.PHONY : home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.s
-
 home/feilong/Ros-Cat/src/mavpi/src/protocol.o: home/feilong/Ros-Cat/src/mavpi/src/protocol.c.o
 
 .PHONY : home/feilong/Ros-Cat/src/mavpi/src/protocol.o
@@ -176,6 +149,60 @@ home/feilong/Ros-Cat/src/mavpi/src/protocol.s: home/feilong/Ros-Cat/src/mavpi/sr
 home/feilong/Ros-Cat/src/mavpi/src/protocol.c.s:
 	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/protocol.c.s
 .PHONY : home/feilong/Ros-Cat/src/mavpi/src/protocol.c.s
+
+home/feilong/Ros-Cat/src/mavpi/src/serial.o: home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o
+
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/serial.o
+
+# target to build an object file
+home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o:
+	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o
+
+home/feilong/Ros-Cat/src/mavpi/src/serial.i: home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.i
+
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/serial.i
+
+# target to preprocess a source file
+home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.i:
+	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.i
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.i
+
+home/feilong/Ros-Cat/src/mavpi/src/serial.s: home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.s
+
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/serial.s
+
+# target to generate assembly for a file
+home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.s:
+	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.s
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.s
+
+home/feilong/Ros-Cat/src/mavpi/src/timeout.o: home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o
+
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/timeout.o
+
+# target to build an object file
+home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o:
+	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o
+
+home/feilong/Ros-Cat/src/mavpi/src/timeout.i: home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.i
+
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/timeout.i
+
+# target to preprocess a source file
+home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.i:
+	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.i
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.i
+
+home/feilong/Ros-Cat/src/mavpi/src/timeout.s: home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.s
+
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/timeout.s
+
+# target to generate assembly for a file
+home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.s:
+	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.s
+.PHONY : home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.s
 
 test.o: test.cpp.o
 
@@ -213,12 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... SerialCom"
-	@echo "... home/feilong/Ros-Cat/src/mavpi/src/SerialCom.o"
-	@echo "... home/feilong/Ros-Cat/src/mavpi/src/SerialCom.i"
-	@echo "... home/feilong/Ros-Cat/src/mavpi/src/SerialCom.s"
 	@echo "... home/feilong/Ros-Cat/src/mavpi/src/protocol.o"
 	@echo "... home/feilong/Ros-Cat/src/mavpi/src/protocol.i"
 	@echo "... home/feilong/Ros-Cat/src/mavpi/src/protocol.s"
+	@echo "... home/feilong/Ros-Cat/src/mavpi/src/serial.o"
+	@echo "... home/feilong/Ros-Cat/src/mavpi/src/serial.i"
+	@echo "... home/feilong/Ros-Cat/src/mavpi/src/serial.s"
+	@echo "... home/feilong/Ros-Cat/src/mavpi/src/timeout.o"
+	@echo "... home/feilong/Ros-Cat/src/mavpi/src/timeout.i"
+	@echo "... home/feilong/Ros-Cat/src/mavpi/src/timeout.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"

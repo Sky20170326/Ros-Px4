@@ -7,6 +7,7 @@
 
 //using namespace std;
 
+struct termios Opt;
 
 flSerialPort::flSerialPort(char * portName,int bandRate)
 {

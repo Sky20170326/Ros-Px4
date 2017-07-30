@@ -105,46 +105,72 @@ CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/protocol.c.o.provide
 CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/protocol.c.o.provides.build: CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/protocol.c.o
 
 
-CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o: CMakeFiles/SerialCom.dir/flags.make
-CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o: /home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o -c /home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp
+CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o: CMakeFiles/SerialCom.dir/flags.make
+CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o: /home/feilong/Ros-Cat/src/mavpi/src/serial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o -c /home/feilong/Ros-Cat/src/mavpi/src/serial.cpp
 
-CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp > CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.i
+CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/feilong/Ros-Cat/src/mavpi/src/serial.cpp > CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.i
 
-CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp -o CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.s
+CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/feilong/Ros-Cat/src/mavpi/src/serial.cpp -o CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.s
 
-CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o.requires:
+CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o.requires:
 
-.PHONY : CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o.requires
+.PHONY : CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o.requires
 
-CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o.provides: CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o.provides.build
-.PHONY : CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o.provides
+CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o.provides: CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o.provides.build
+.PHONY : CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o.provides
 
-CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o.provides.build: CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o
+CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o.provides.build: CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o
+
+
+CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o: CMakeFiles/SerialCom.dir/flags.make
+CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o: /home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o -c /home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp
+
+CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp > CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.i
+
+CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp -o CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.s
+
+CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o.requires:
+
+.PHONY : CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o.requires
+
+CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o.provides: CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SerialCom.dir/build.make CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o.provides.build
+.PHONY : CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o.provides
+
+CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o.provides.build: CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o
 
 
 # Object files for target SerialCom
 SerialCom_OBJECTS = \
 "CMakeFiles/SerialCom.dir/test.cpp.o" \
 "CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/protocol.c.o" \
-"CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o"
+"CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o" \
+"CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o"
 
 # External object files for target SerialCom
 SerialCom_EXTERNAL_OBJECTS =
 
 SerialCom: CMakeFiles/SerialCom.dir/test.cpp.o
 SerialCom: CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/protocol.c.o
-SerialCom: CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o
+SerialCom: CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o
+SerialCom: CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o
 SerialCom: CMakeFiles/SerialCom.dir/build.make
 SerialCom: /usr/lib/x86_64-linux-gnu/libboost_system.so
 SerialCom: CMakeFiles/SerialCom.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable SerialCom"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable SerialCom"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SerialCom.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -154,7 +180,8 @@ CMakeFiles/SerialCom.dir/build: SerialCom
 
 CMakeFiles/SerialCom.dir/requires: CMakeFiles/SerialCom.dir/test.cpp.o.requires
 CMakeFiles/SerialCom.dir/requires: CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/protocol.c.o.requires
-CMakeFiles/SerialCom.dir/requires: CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o.requires
+CMakeFiles/SerialCom.dir/requires: CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o.requires
+CMakeFiles/SerialCom.dir/requires: CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o.requires
 
 .PHONY : CMakeFiles/SerialCom.dir/requires
 

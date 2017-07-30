@@ -11,7 +11,9 @@ add_executable(
           SerialCom
           test.cpp
           ../protocol.c
-          ../SerialCom.cpp
+#          ../SerialCom.cpp
+          ../serial.cpp
+          ../timeout.cpp
         )
 
 target_link_libraries(SerialCom

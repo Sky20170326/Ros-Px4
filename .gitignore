@@ -36,3 +36,5 @@ build
 logs
 devel
 *.log
+*.tags
+*.tags1

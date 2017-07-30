@@ -2,8 +2,9 @@
 #include <string>
 #include <iostream>
 using namespace std;
-
+//#include "../SerialCom.hpp"
 #include "../protocol.h"
+#include "../serial.h"
 
 void error(string msg)
 {
@@ -13,6 +14,52 @@ void error(string msg)
 void info(string msg)
 {
         cout << "info => " << msg << endl;
+}
+
+void SerialHandle(string buf)
+{
+        info("receive: " + buf);
+}
+
+serial serial;
+void serialwritetest()
+{
+    serial.Open("/dev/ttyUSB0", 9600, 8, NO, 1);
+
+    serial.Write("aaaaa", 5);
+
+    serial.Close();
+}
+
+void serialReadTest()
+{
+    serial.Open("/dev/ttyUSB0", 9600, 8, NO, 1);
+
+    char buffer[256] = {0};
+    int length = 0;
+    while(1)
+	{
+		// Wait character
+		length = serial.Read(buffer);
+
+		if(length)
+		{
+			for(int i = 0; i < length; i++)
+			{
+				printf("%.2X ", buffer[i]);
+				//printf("%c", buffer[i]);
+			}
+            printf("\n");
+		}
+	}
+
+    serial.Close();
+}
+
+void serialtest()
+{
+    serialwritetest();
+    serialReadTest();
 }
 
 void checkUp(char * s)
@@ -80,6 +127,8 @@ int main (int argc, char *argv[])
         checkDown(dtcerr3);
         char dtcerr4[] = "s,0,20,30,50,20,0,0,150,70,10,100,40,\n";
         checkDown(dtcerr4);
+
+        serialtest();
 
         return(0);
 }

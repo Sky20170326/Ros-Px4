@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SerialCom.dir/test.cpp.o"
   "CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/protocol.c.o"
-  "CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp.o"
+  "CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp.o"
+  "CMakeFiles/SerialCom.dir/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp.o"
   "SerialCom.pdb"
   "SerialCom"
 )

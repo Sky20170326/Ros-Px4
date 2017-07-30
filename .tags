@@ -981,9 +981,20 @@ makeDownPack	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/protocol.c	/^download
 unpack	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/protocol.c	/^int unpack(char * str,int * p,int maxLength)$/;"	function	line:89	signature:(char * str,int * p,int maxLength)
 unpackUp	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/protocol.c	/^bool unpackUp (char * str,upload_s * p)$/;"	function	line:116	signature:(char * str,upload_s * p)
 unpackDown	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/protocol.c	/^bool unpackDown (char * str,download_s * p)$/;"	function	line:132	signature:(char * str,download_s * p)
-flSerialPort	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^flSerialPort::flSerialPort(char * portName,int bandRate)$/;"	function	line:11	class:flSerialPort	signature:(char * portName,int bandRate)
-flwrite	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^bool flSerialPort::flwrite(string str)$/;"	function	line:20	class:flSerialPort	signature:(string str)
-flread	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^bool flSerialPort::flread()$/;"	function	line:29	class:flSerialPort	signature:()
+stru	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char stru[20];$/;"	variable	line:4
+packUpload	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char * packUpload(upload_s *pack)$/;"	function	line:6	signature:(upload_s *pack)
+strd	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char strd[20];$/;"	variable	line:22
+packDownload	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char * packDownload(download_s * pack)$/;"	function	line:23	signature:(download_s * pack)
+sumcheck	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^int sumcheck(int * addr,int sumCheck)$/;"	function	line:43	signature:(int * addr,int sumCheck)
+upIndex	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^int upIndex = 0;$/;"	variable	line:54
+makeUpPack	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^upload_s makeUpPack(float x,float y,float z,float yaw)$/;"	function	line:56	signature:(float x,float y,float z,float yaw)
+downIndex	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^int downIndex = 0;$/;"	variable	line:73
+makeDownPack	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^download_s makeDownPack(float x,float y,float z,float yaw,$/;"	function	line:74	signature:(float x,float y,float z,float yaw, float x_set,float y_set,float z_set,float yaw_set)
+unpack	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^int unpack(char * str,int * p,int maxLength)$/;"	function	line:95	signature:(char * str,int * p,int maxLength)
+unpackUp	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool unpackUp (char * str,upload_s * p)$/;"	function	line:131	signature:(char * str,upload_s * p)
+unpackDown	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool unpackDown (char * str,download_s * p)$/;"	function	line:161	signature:(char * str,download_s * p)
+readFilter	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool readFilter(char * c)$/;"	function	line:174	signature:(char * c)
+CheckString	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool CheckString(char *c)$/;"	function	line:183	signature:(char *c)
 _H_PRO_	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^#define _H_PRO_$/;"	macro	line:2
 DIV	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^#define DIV /;"	macro	line:14
 splitChar	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^#define splitChar /;"	macro	line:15
@@ -1011,22 +1022,28 @@ div	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int div;$/;"	member
 sumcheck	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int sumcheck;$/;"	member	line:35	struct:__anon2
 tail	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int tail;$/;"	member	line:37	struct:__anon2
 download_s	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^} download_s;$/;"	typedef	line:38	typeref:struct:__anon2
-stru	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char stru[20];$/;"	variable	line:4
-packUpload	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char * packUpload(upload_s *pack)$/;"	function	line:6	signature:(upload_s *pack)
-strd	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char strd[20];$/;"	variable	line:22
-packDownload	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char * packDownload(download_s * pack)$/;"	function	line:23	signature:(download_s * pack)
-sumcheck	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^int sumcheck(int * addr,int sumCheck)$/;"	function	line:43	signature:(int * addr,int sumCheck)
-upIndex	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^int upIndex = 0;$/;"	variable	line:54
-makeUpPack	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^upload_s makeUpPack(float x,float y,float z,float yaw)$/;"	function	line:56	signature:(float x,float y,float z,float yaw)
-downIndex	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^int downIndex = 0;$/;"	variable	line:73
-makeDownPack	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^download_s makeDownPack(float x,float y,float z,float yaw,$/;"	function	line:74	signature:(float x,float y,float z,float yaw, float x_set,float y_set,float z_set,float yaw_set)
-unpack	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^int unpack(char * str,int * p,int maxLength)$/;"	function	line:95	signature:(char * str,int * p,int maxLength)
-unpackUp	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool unpackUp (char * str,upload_s * p)$/;"	function	line:131	signature:(char * str,upload_s * p)
-unpackDown	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool unpackDown (char * str,download_s * p)$/;"	function	line:161	signature:(char * str,download_s * p)
-readFilter	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool readFilter(char * c)$/;"	function	line:174	signature:(char * c)
-CheckString	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool CheckString(char *c)$/;"	function	line:183	signature:(char *c)
-error	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void error(string msg)$/;"	function	line:8	signature:(string msg)
-info	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void info(string msg)$/;"	function	line:13	signature:(string msg)
-checkUp	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void checkUp(char * s)$/;"	function	line:18	signature:(char * s)
-checkDown	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void checkDown(char * s)$/;"	function	line:28	signature:(char * s)
-main	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^int main (int argc, char *argv[])$/;"	function	line:38	signature:(int argc, char *argv[])
+Opt	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^struct termios Opt;$/;"	variable	line:10	typeref:struct:termios
+flSerialPort	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^flSerialPort::flSerialPort(char * portName,int bandRate)$/;"	function	line:12	class:flSerialPort	signature:(char * portName,int bandRate)
+flwrite	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^bool flSerialPort::flwrite(string str)$/;"	function	line:21	class:flSerialPort	signature:(string str)
+flread	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^bool flSerialPort::flread()$/;"	function	line:30	class:flSerialPort	signature:()
+Open	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^	char serial::Open(char* port, int baud, char bits, parity parity, char stopbit)$/;"	function	line:11	class:serial	signature:(char* port, int baud, char bits, parity parity, char stopbit)
+Close	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^	void serial::Close(void)$/;"	function	line:105	class:serial	signature:(void)
+Write	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^	char serial::Write(char* buffer, int length)$/;"	function	line:111	class:serial	signature:(char* buffer, int length)
+Read	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^	int serial::Read(char* buffer)$/;"	function	line:136	class:serial	signature:(char* buffer)
+Open	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^	char serial::Open(char* port, int baud, char bits, parity parity, char stopbit)$/;"	function	line:158	class:serial	signature:(char* port, int baud, char bits, parity parity, char stopbit)
+Close	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^	void serial::Close(void)$/;"	function	line:257	class:serial	signature:(void)
+Write	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^	char serial::Write(char* buffer, int length)$/;"	function	line:270	class:serial	signature:(char* buffer, int length)
+Read	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^	int serial::Read(char* buffer)$/;"	function	line:292	class:serial	signature:(char* buffer)
+timeout	/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp	/^timeout::timeout(int time)$/;"	function	line:4	class:timeout	signature:(int time)
+start	/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp	/^void timeout::start(void)$/;"	function	line:10	class:timeout	signature:(void)
+end	/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp	/^char timeout::end(void)$/;"	function	line:16	class:timeout	signature:(void)
+error	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void error(string msg)$/;"	function	line:9	signature:(string msg)
+info	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void info(string msg)$/;"	function	line:14	signature:(string msg)
+SerialHandle	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void SerialHandle(string buf)$/;"	function	line:19	signature:(string buf)
+serial	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^serial serial;$/;"	variable	line:24
+serialwritetest	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void serialwritetest()$/;"	function	line:25	signature:()
+serialReadTest	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void serialReadTest()$/;"	function	line:34	signature:()
+serialtest	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void serialtest()$/;"	function	line:59	signature:()
+checkUp	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void checkUp(char * s)$/;"	function	line:65	signature:(char * s)
+checkDown	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void checkDown(char * s)$/;"	function	line:75	signature:(char * s)
+main	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^int main (int argc, char *argv[])$/;"	function	line:85	signature:(int argc, char *argv[])
