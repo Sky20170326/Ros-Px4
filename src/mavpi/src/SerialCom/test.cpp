@@ -100,7 +100,7 @@ int main (int argc, char *argv[])
         info("up: " + string(ut));
 
 
-        download_s dp = makeDownPack(0.2,0.3,0.5,0.2,0.0,0.0,1.5,0.7);
+        download_s dp = makeDownPack(0.2,0.3,0.5,0.2,0.0,0.0,1.5,0.7,0.2,0.5,0.3);
         char * dt = packDownload(&dp);
         info("down: " + string(dt));
 
@@ -117,7 +117,7 @@ int main (int argc, char *argv[])
         checkUp(utcerr4);
 
         //unpack download test
-        char dtc[] = "s,0,20,30,50,20,0,0,150,70,100,40,\n";
+        char dtc[] = "s,0,20,30,50,20,0,0,150,70,20,50,30,100,40,\n";
         checkDown(dtc);
         char dtcerr1[] = "s,0,20,30,50,20,0,0,15100,40,\n";
         checkDown(dtcerr1);
@@ -128,7 +128,7 @@ int main (int argc, char *argv[])
         char dtcerr4[] = "s,0,20,30,50,20,0,0,150,70,10,100,40,\n";
         checkDown(dtcerr4);
 
-        serialtest();
+        //serialtest();
 
         return(0);
 }
