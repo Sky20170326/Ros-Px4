@@ -12,6 +12,7 @@ extern "C" {
 
 
 #define DIV 100
+#define BufferLength 50
 #define splitChar ','
 
 typedef struct
@@ -31,6 +32,9 @@ typedef struct
         int index;
         int x,y,z,yaw;
         int x_set,y_set,z_set,yaw_set;
+        int pitch;
+        int roll;
+        int dis;
         int div;
         int sumcheck;
         //char split = ',';
@@ -42,7 +46,8 @@ char * packDownload(download_s * pack);
 
 upload_s makeUpPack(float x,float y,float z,float yaw);
 download_s makeDownPack(float x,float y,float z,float yaw,
-                        float x_set,float y_set,float z_set,float yaw_set);
+                        float x_set,float y_set,float z_set,float yaw_set,
+                        float pitch,float roll,float dis);
 
 bool unpackUp (char * str,upload_s * p);
 bool unpackDown (char * str,download_s * p);
