@@ -72,6 +72,16 @@ float rec_x = 0,
       rec_y = 0,
       rec_z = 0,
       rec_yaw = 0;
+char buffer[BufferLength];
+string buff = "";
+bool save = false;
+int length = 0;
+
+void SerialCallBack(string str)
+{
+    ROS_INFO(str.c_str());
+}
+
 int main(int argc, char **argv)
 {
         ROS_INFO("System init ...");
@@ -167,7 +177,30 @@ int main(int argc, char **argv)
 
 
                 //check serial data
-                
+                int bLength = serial.Read(buffer);
+                for (int i = 0;i < bLength;i++)
+                {
+                    if(readFilter(buffer + i))
+                    {
+                        if(buffer[i] == 'r' && !save)
+                        {
+                            buff.clear();
+                            save = true;
+                        }
+                        else if(buffer[i] == '\n' && save)
+                        {
+                            buff.push_back(buffer[i]);
+                            SerialCallBack(buff);
+                            save = false;
+                            buff.clear();
+                        }
+
+                        if(save)
+                        {
+                            buff.push_back(buffer[i]);
+                        }
+                    }
+                }
 
                 //set status led
 

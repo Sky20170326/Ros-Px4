@@ -35,7 +35,7 @@ void serialReadTest()
 {
     serial.Open("/dev/ttyUSB0", 9600, 8, NO, 1);
 
-    char buffer[256] = {0};
+    char buffer[BufferLength] = {0};
     int length = 0;
     while(1)
 	{

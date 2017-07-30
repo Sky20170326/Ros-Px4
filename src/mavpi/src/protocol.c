@@ -187,6 +187,7 @@ bool readFilter(char * c)
                        *c == 'r' || *c == 's' //head
                        || *c == '\n' //tail
                        || (*c >= '0' && *c <= '9') //number
+                       || (*c == ',') //split
                        );
 }
 
