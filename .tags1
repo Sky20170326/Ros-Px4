@@ -4,3 +4,8 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+simulator	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^#define simulator$/;"	macro	line:15	file:
+current_state	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^mavros_msgs::State current_state;$/;"	variable	line:17
+state_cb	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void state_cb(const mavros_msgs::State::ConstPtr& msg){$/;"	function	line:18	signature:(const mavros_msgs::State::ConstPtr& msg)
+xyz2Position	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^geometry_msgs::PoseStamped xyz2Position (float x,float y,float z)$/;"	function	line:22	signature:(float x,float y,float z)
+main	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^int main(int argc, char **argv)$/;"	function	line:33	signature:(int argc, char **argv)

@@ -958,11 +958,6 @@ source_space	/home/feilong/Ros-Cat/.catkin_tools/profiles/default/build.yaml	/^s
 use_env_cache	/home/feilong/Ros-Cat/.catkin_tools/profiles/default/build.yaml	/^use_env_cache: false$/;"	function	line:15
 use_internal_make_jobserver	/home/feilong/Ros-Cat/.catkin_tools/profiles/default/build.yaml	/^use_internal_make_jobserver: true$/;"	function	line:16
 whitelist	/home/feilong/Ros-Cat/.catkin_tools/profiles/default/build.yaml	/^whitelist: []$/;"	function	line:17
-simulator	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^#define simulator$/;"	macro	line:13	file:
-current_state	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^mavros_msgs::State current_state;$/;"	variable	line:15
-state_cb	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void state_cb(const mavros_msgs::State::ConstPtr& msg){$/;"	function	line:16	signature:(const mavros_msgs::State::ConstPtr& msg)
-xyz2Position	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^geometry_msgs::PoseStamped xyz2Position (float x,float y,float z)$/;"	function	line:20	signature:(float x,float y,float z)
-main	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^int main(int argc, char **argv)$/;"	function	line:31	signature:(int argc, char **argv)
 any_type	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp	/^typedef string any_type;$/;"	typedef	line:11
 flSerialPort	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp	/^class flSerialPort$/;"	class	line:14
 str	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.hpp	/^string str;$/;"	member	line:25	class:flSerialPort
@@ -1047,3 +1042,8 @@ serialtest	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void serialt
 checkUp	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void checkUp(char * s)$/;"	function	line:65	signature:(char * s)
 checkDown	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void checkDown(char * s)$/;"	function	line:75	signature:(char * s)
 main	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^int main (int argc, char *argv[])$/;"	function	line:85	signature:(int argc, char *argv[])
+simulator	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^#define simulator$/;"	macro	line:15	file:
+current_state	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^mavros_msgs::State current_state;$/;"	variable	line:17
+state_cb	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void state_cb(const mavros_msgs::State::ConstPtr& msg){$/;"	function	line:18	signature:(const mavros_msgs::State::ConstPtr& msg)
+xyz2Position	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^geometry_msgs::PoseStamped xyz2Position (float x,float y,float z)$/;"	function	line:22	signature:(float x,float y,float z)
+main	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^int main(int argc, char **argv)$/;"	function	line:33	signature:(int argc, char **argv)
