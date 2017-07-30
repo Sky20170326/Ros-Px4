@@ -1011,11 +1011,6 @@ div	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int div;$/;"	member
 sumcheck	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int sumcheck;$/;"	member	line:35	struct:__anon2
 tail	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int tail;$/;"	member	line:37	struct:__anon2
 download_s	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^} download_s;$/;"	typedef	line:38	typeref:struct:__anon2
-error	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void error(string msg)$/;"	function	line:10	signature:(string msg)
-info	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void info(string msg)$/;"	function	line:15	signature:(string msg)
-serialtest	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void serialtest()$/;"	function	line:20	signature:()
-checkUp	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void checkUp(char * s)$/;"	function	line:46	signature:(char * s)
-main	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^int main (int argc, char *argv[])$/;"	function	line:56	signature:(int argc, char *argv[])
 stru	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char stru[20];$/;"	variable	line:4
 packUpload	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char * packUpload(upload_s *pack)$/;"	function	line:6	signature:(upload_s *pack)
 strd	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char strd[20];$/;"	variable	line:22
@@ -1030,3 +1025,9 @@ unpackUp	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool unpackUp (char * 
 unpackDown	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool unpackDown (char * str,download_s * p)$/;"	function	line:161	signature:(char * str,download_s * p)
 readFilter	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool readFilter(char * c)$/;"	function	line:174	signature:(char * c)
 CheckString	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool CheckString(char *c)$/;"	function	line:183	signature:(char *c)
+error	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void error(string msg)$/;"	function	line:10	signature:(string msg)
+info	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void info(string msg)$/;"	function	line:15	signature:(string msg)
+serialtest	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void serialtest()$/;"	function	line:20	signature:()
+checkUp	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void checkUp(char * s)$/;"	function	line:46	signature:(char * s)
+checkDown	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void checkDown(char * s)$/;"	function	line:56	signature:(char * s)
+main	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^int main (int argc, char *argv[])$/;"	function	line:66	signature:(int argc, char *argv[])
