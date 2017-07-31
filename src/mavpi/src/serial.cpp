@@ -37,11 +37,11 @@ char serial::Open(char* port, int baud, char bits, parity parity, char stopbit)
     SetupComm(m_fd, 4096, 4096);
 
     // Reset settings
-    m_conf.fOutxCtsFlow = FALSE;
-    m_conf.fOutxDsrFlow = FALSE;
-    m_conf.fOutX = FALSE;
-    m_conf.fInX = FALSE;
-    m_conf.fNull = 0;
+    m_conf.fOutxCtsFlow  = FALSE;
+    m_conf.fOutxDsrFlow  = FALSE;
+    m_conf.fOutX         = FALSE;
+    m_conf.fInX          = FALSE;
+    m_conf.fNull         = 0;
     m_conf.fAbortOnError = 0;
 
     //m_conf.fRtsControl=RTS_CONTROL_TOGGLE;
@@ -136,7 +136,7 @@ void serial::Close(void)
 
 char serial::Write(char* buffer, int length)
 {
-    DWORD r;
+    DWORD    r;
     uint8_t* pos = (uint8_t*)buffer;
 
     // Send data
@@ -158,8 +158,8 @@ char serial::Write(char* buffer, int length)
 
 int serial::Read(char* buffer, int maxNum)
 {
-    DWORD r = 1;
-    int length = 0;
+    DWORD r      = 1;
+    int   length = 0;
 
     //memset(buffer, 0x00, BUFFER_SIZE);
 
@@ -313,7 +313,7 @@ void serial::Close(void)
 
 char serial::Write(char* buffer, int length)
 {
-    ssize_t r;
+    ssize_t        r;
     const uint8_t* pos = (const uint8_t*)buffer;
 
     // Send data
@@ -333,8 +333,8 @@ char serial::Write(char* buffer, int length)
 
 int serial::Read(char* buffer)
 {
-    ssize_t r = 1;
-    int length = 0;
+    ssize_t r      = 1;
+    int     length = 0;
 
     // Set timeout between 2 bytes (20ms)
     timeout timeout(TIME_OUT);

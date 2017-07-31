@@ -6,12 +6,12 @@
 #if defined(__WIN32__) || defined(__CYGWIN__)
 #include <windows.h>
 #else
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <sys/ioctl.h>
-#include <termios.h>
-#include <string.h>
 #include <errno.h>
+#include <string.h>
+#include <sys/ioctl.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <termios.h>
 #endif
 
 #define BUFFER_SIZE 256
@@ -27,9 +27,9 @@ class serial {
 private:
 #if defined(__WIN32__) || defined(__CYGWIN__)
     HANDLE m_fd;
-    DCB m_conf;
+    DCB    m_conf;
 #else
-    int m_fd;
+    int            m_fd;
     struct termios m_oldtio;
     struct termios m_newtio;
 #endif

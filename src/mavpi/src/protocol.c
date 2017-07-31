@@ -18,7 +18,7 @@ char* packUpload(upload_s* pack)
     return stru;
 }
 
-char strd[BufferLength];
+char  strd[BufferLength];
 char* packDownload(download_s* pack)
 {
     sprintf(strd, "%c,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%c",
@@ -56,47 +56,47 @@ int upIndex = 0;
 upload_s makeUpPack(float x, float y, float z, float yaw)
 {
     upload_s p;
-    p.head = (int)'r';
+    p.head  = (int)'r';
     p.index = upIndex++;
     if (upIndex >= 100)
         upIndex = 0;
-    p.x = (int)(x * DIV);
-    p.y = (int)(y * DIV);
-    p.z = (int)(z * DIV);
-    p.yaw = (int)(yaw * DIV);
-    p.div = DIV;
-    p.sumcheck = 0;
-    p.tail = (int)'\n';
+    p.x         = (int)(x * DIV);
+    p.y         = (int)(y * DIV);
+    p.z         = (int)(z * DIV);
+    p.yaw       = (int)(yaw * DIV);
+    p.div       = DIV;
+    p.sumcheck  = 0;
+    p.tail      = (int)'\n';
     //printf("check!");
     p.sumcheck = sumcheck((int*)&p, p.sumcheck);
     return p;
 }
 
-int downIndex = 0;
+int        downIndex = 0;
 download_s makeDownPack(float x, float y, float z, float yaw,
     float x_set, float y_set, float z_set, float yaw_set,
     float pitch, float roll, float dis)
 {
     download_s p;
-    p.head = (int)'s';
+    p.head  = (int)'s';
     p.index = downIndex++;
     if (downIndex >= 100)
         downIndex = 0;
-    p.x = (int)(x * DIV);
-    p.y = (int)(y * DIV);
-    p.z = (int)(z * DIV);
-    p.yaw = (int)(yaw * DIV);
-    p.x_set = (int)(x_set * DIV);
-    p.y_set = (int)(y_set * DIV);
-    p.z_set = (int)(z_set * DIV);
-    p.yaw_set = (int)(yaw_set * DIV);
-    p.pitch = (int)(pitch * DIV);
-    p.roll = (int)(roll * DIV);
-    p.dis = (int)(dis * DIV);
-    p.div = DIV;
-    p.sumcheck = 0;
-    p.tail = (int)'\n';
-    p.sumcheck = sumcheck((int*)&p, p.sumcheck);
+    p.x           = (int)(x * DIV);
+    p.y           = (int)(y * DIV);
+    p.z           = (int)(z * DIV);
+    p.yaw         = (int)(yaw * DIV);
+    p.x_set       = (int)(x_set * DIV);
+    p.y_set       = (int)(y_set * DIV);
+    p.z_set       = (int)(z_set * DIV);
+    p.yaw_set     = (int)(yaw_set * DIV);
+    p.pitch       = (int)(pitch * DIV);
+    p.roll        = (int)(roll * DIV);
+    p.dis         = (int)(dis * DIV);
+    p.div         = DIV;
+    p.sumcheck    = 0;
+    p.tail        = (int)'\n';
+    p.sumcheck    = sumcheck((int*)&p, p.sumcheck);
     return p;
 }
 
@@ -105,11 +105,11 @@ int unpack(char* str, int* p, int maxLength)
     //printf("%s \n",str);
     int* _p = p;
 
-    int packLength = 0;
+    int  packLength      = 0;
     char splitCharPtr[2] = { splitChar, '\0' };
 
     char* s;
-    s = strtok(str, splitCharPtr);
+    s    = strtok(str, splitCharPtr);
     *p++ = *s;
     //printf("%s \n",s);
 
@@ -143,29 +143,21 @@ bool unpackUp(char* str, upload_s* p)
             && p->tail == '\n'
             && p->sumcheck == sumcheck((int*)p, p->sumcheck))
             return true;
-    /*
-        printf("data:%d,%d %d %d %d,%d,%d,%d %d %d %d %d\n",sizeof(upload_s) / sizeof(int),num,
-               p->head,
-               p->index,
-               p->x,p->y,p->z,p->yaw,
-               p->div,
-               p->sumcheck,
-               p->tail,
-               sumcheck((int *)p,p->sumcheck));
- */
+
     return false;
 }
 
 bool unpackDown(char* str, download_s* p)
 {
-    int* _p = (int*)p;
-    int num = unpack(str, p, sizeof(download_s) / sizeof(int));
+    int* _p  = (int*)p;
+    int  num = unpack(str, p, sizeof(download_s) / sizeof(int));
     //printf("\nthis:%d %d\n",num,sizeof(download_s) / sizeof(int));
     if (sizeof(download_s) / sizeof(int) == num)
         if (p->head == 's'
             && p->tail == '\n'
             && p->sumcheck == sumcheck((int*)p, p->sumcheck))
             return true;
+
     return false;
 }
 

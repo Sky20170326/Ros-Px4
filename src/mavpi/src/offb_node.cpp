@@ -1,8 +1,3 @@
-/**
- * @file offb_node.cpp
- * @brief offboard example node, written with mavros version 0.14.2, px4 flight
- * stack and tested in Gazebo SITL
- */
 
 #include <geometry_msgs/PoseStamped.h>
 #include <geometry_msgs/TwistStamped.h>
@@ -264,14 +259,7 @@ int main(int argc, char** argv)
 
         // calc eular
         geometry_msgs::Vector3 eular = quad2eular(imu_status.orientation);
-        /*
-float a,b,c;
-quad(imu_status.orientation.w,
- imu_status.orientation.x,
- imu_status.orientation.y,
- imu_status.orientation.z,
- &a, &b, &c);
-*/
+
         // show state
         showInfo(eular);
 
@@ -284,10 +272,3 @@ quad(imu_status.orientation.w,
 
     return 0;
 }
-
-/**
-   * @file offb_node.cpp
-   * @brief offboard example node, written with mavros version 0.14.2, px4
-   * flight
-   * stack and tested in Gazebo SITL
-   */
