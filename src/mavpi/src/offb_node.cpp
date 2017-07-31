@@ -63,18 +63,17 @@ geometry_msgs::Vector3 quad2eular(geometry_msgs::Quaternion quad)
 {
     geometry_msgs::Vector3 eular;
 
-    eular.x = asin(-2 * quad.x * quad.z + 2 * quad.w * quad.y) * 57.3; // pitch
-    eular.y = atan2(2 * quad.y * quad.z + 2 * quad.w * quad.x,
-                  -2 * quad.x * quad.x - 2 * quad.y * quad.y + 1)
-        * 57.3; // roll
-    eular.z = atan2(2 * (quad.x * quad.y + quad.w * quad.z),
-                  quad.w * quad.w + quad.x * quad.x - quad.y * quad.y - quad.z * quad.z)
-        * 57.3; // yaw
+#define quad2eularnum 57.3
+    eular.x = quad2eularnum * asin(-2 * quad.x * quad.z + 2 * quad.w * quad.y); // pitch
+    eular.y = quad2eularnum * atan2(2 * quad.y * quad.z + 2 * quad.w * quad.x,
+                                  -2 * quad.x * quad.x - 2 * quad.y * quad.y + 1); // roll
+    eular.z = quad2eularnum * atan2(2 * (quad.x * quad.y + quad.w * quad.z),
+                                  quad.w * quad.w + quad.x * quad.x - quad.y * quad.y - quad.z * quad.z); // yaw
 
     return eular;
 }
 
-serial serial;
+serial                    serial;
 geometry_msgs::Quaternion setPos;
 void checkUp(char* s)
 {
@@ -86,8 +85,8 @@ void checkUp(char* s)
         setPos.w = (float)upc.yaw / upc.div;
         // check data
         // r,0,0,0,150,70,100,20,
-        ROS_INFO("REC CTRL CMD => x: [%f], y: [%f], z: [%f], yaw: [%f]",
-            setPos.x, setPos.y, setPos.z, setPos.w);
+        ROS_INFO("REC CTRL CMD => x: [%f], y: [%f], z: [%f], yaw: [%f]", setPos.x,
+            setPos.y, setPos.z, setPos.w);
     } else {
         ROS_WARN("REC CMD ERR!");
     }
@@ -175,10 +174,10 @@ void armAndModeOffboard(ros::NodeHandle& nh, ros::Time& last_request)
 
 void checkSerialCmd()
 {
-    char buffer[BUFFER_SIZE];
-    string buff = "";
-    bool save = false;
-    int length = 0;
+    char   buffer[BUFFER_SIZE];
+    string buff   = "";
+    bool   save   = false;
+    int    length = 0;
 
     // check serial data
     int bLength = serial.Read(buffer);
@@ -231,8 +230,8 @@ int main(int argc, char** argv)
     ros::NodeHandle nh;
     //订阅器
     ros::Subscriber state_sub = nh.subscribe<mavros_msgs::State>("mavros/state", 10, state_cb);
-    ros::Subscriber imu_sub = nh.subscribe<sensor_msgs::Imu>("mavros/imu/data", 10, imu_state_cb);
-    ros::Subscriber pos_sub = nh.subscribe<geometry_msgs::PoseStamped>(
+    ros::Subscriber imu_sub   = nh.subscribe<sensor_msgs::Imu>("mavros/imu/data", 10, imu_state_cb);
+    ros::Subscriber pos_sub   = nh.subscribe<geometry_msgs::PoseStamped>(
         "mavros/local_position/pose", 10, pose_state_cb);
     ros::Subscriber dis_sub = nh.subscribe<sensor_msgs::Range>(
         "mavros/px4flow/ground_distance", 10, dis_state_cb);
@@ -266,13 +265,13 @@ int main(int argc, char** argv)
         // calc eular
         geometry_msgs::Vector3 eular = quad2eular(imu_status.orientation);
         /*
-           float a,b,c;
-           quad(imu_status.orientation.w,
-             imu_status.orientation.x,
-             imu_status.orientation.y,
-             imu_status.orientation.z,
-             &a, &b, &c);
-         */
+float a,b,c;
+quad(imu_status.orientation.w,
+ imu_status.orientation.x,
+ imu_status.orientation.y,
+ imu_status.orientation.z,
+ &a, &b, &c);
+*/
         // show state
         showInfo(eular);
 
