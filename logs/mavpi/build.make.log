@@ -1,29 +1,11 @@
 [35m[1mScanning dependencies of target mavpi_node[0m
-[ 20%] [32mBuilding CXX object CMakeFiles/mavpi_node.dir/src/serial.cpp.o[0m
-[ 40%] [32mBuilding C object CMakeFiles/mavpi_node.dir/src/protocol.c.o[0m
-[ 60%] [32mBuilding CXX object CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o[0m
-[ 80%] [32mBuilding CXX object CMakeFiles/mavpi_node.dir/src/timeout.cpp.o[0m
-/home/feilong/Ros-Cat/src/mavpi/src/protocol.c: In function ‘sumcheck’:
-/home/feilong/Ros-Cat/src/mavpi/src/protocol.c:54:16: warning: implicit declaration of function ‘abs’ [-Wimplicit-function-declaration]
-         return abs(num % 100);
-                ^
-/home/feilong/Ros-Cat/src/mavpi/src/protocol.c: In function ‘unpack’:
-/home/feilong/Ros-Cat/src/mavpi/src/protocol.c:123:32: warning: implicit declaration of function ‘atoi’ [-Wimplicit-function-declaration]
-                         *p++ = atoi(s);
-                                ^
-/home/feilong/Ros-Cat/src/mavpi/src/protocol.c: In function ‘unpackDown’:
-/home/feilong/Ros-Cat/src/mavpi/src/protocol.c:173:30: warning: passing argument 2 of ‘unpack’ from incompatible pointer type [-Wincompatible-pointer-types]
-         int num = unpack(str,p,sizeof(download_s) / sizeof(int));
-                              ^
-/home/feilong/Ros-Cat/src/mavpi/src/protocol.c:104:5: note: expected ‘int *’ but argument is of type ‘download_s * {aka struct <anonymous> *}’
- int unpack(char * str,int * p,int maxLength)
-     ^
+[ 20%] [32mBuilding CXX object CMakeFiles/mavpi_node.dir/src/offb_node.cpp.o[0m
 /home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp: In function ‘void SerialCallBack(std::__cxx11::string)’:
 /home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp:106:279: warning: format not a string literal and no format arguments [-Wformat-security]
 /home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp: In function ‘int main(int, char**)’:
-/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp:116:53: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
+/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp:173:53: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
          serial.Open("/dev/ttyUSB0", 115200, 8, NO, 1);
                                                      ^
-/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp:269:278: warning: format not a string literal and no format arguments [-Wformat-security]
-[100%] [32m[1mLinking CXX executable /home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node[0m
+/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp:270:278: warning: format not a string literal and no format arguments [-Wformat-security]
+[ 40%] [32m[1mLinking CXX executable /home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node[0m
 [100%] Built target mavpi_node

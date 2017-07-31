@@ -113,7 +113,6 @@ int main(int argc, char **argv)
 {
         ROS_INFO("System init ...");
 
-        serial.Open("/dev/ttyUSB0", 115200, 8, NO, 1);
 
         ros::init(argc, argv, "offb_node");
         ros::NodeHandle nh;
@@ -170,6 +169,8 @@ int main(int argc, char **argv)
         arm_cmd.request.value = true;
 
         ros::Time last_request = ros::Time::now();
+
+        serial.Open("/dev/ttyUSB0", 115200, 8, NO, 1);
 
         while(ros::ok()) {
 
