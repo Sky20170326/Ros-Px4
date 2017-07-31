@@ -38,3 +38,5 @@ devel
 *.log
 *.tags
 *.tags1
+
+*.includecache
