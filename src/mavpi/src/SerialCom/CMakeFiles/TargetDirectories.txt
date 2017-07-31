@@ -1,3 +1,0 @@
-/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/CMakeFiles/rebuild_cache.dir
-/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/CMakeFiles/edit_cache.dir
-/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/CMakeFiles/SerialCom.dir

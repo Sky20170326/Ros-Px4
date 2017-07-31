@@ -1,8 +1,0 @@
-prefix=/home/feilong/Ros-Cat/devel/.private/mavpi
-
-Name: mavpi
-Description: Description of mavpi
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/feilong/Ros-Cat/devel/.private/mavpi/lib 
-Requires: 
