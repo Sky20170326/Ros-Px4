@@ -257,7 +257,7 @@ int main(int argc, char** argv)
         // set status led
 
         // pubpos
-        local_pos_pub.publish(xyz2Position(0, 0, 1.5));
+        local_pos_pub.publish(xyz2Position(0, 0, 1.0));
 
         // calc eular
         geometry_msgs::Vector3 eular = quad2eular(imu_status.orientation);
