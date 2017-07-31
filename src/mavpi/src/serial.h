@@ -19,31 +19,32 @@
 
 enum parity
 {
-	NO,
-	EVEN,
-	ODD
+								NO,
+								EVEN,
+								ODD
 };
 
 class serial
 {
-	private:
-		
+private:
+
 #if defined(__WIN32__) || defined(__CYGWIN__)
-		HANDLE m_fd;
-		DCB m_conf;
+								HANDLE m_fd;
+								DCB m_conf;
 #else
-		int	m_fd;
-		struct termios m_oldtio;
-		struct termios m_newtio;
+								int m_fd;
+								struct termios m_oldtio;
+								struct termios m_newtio;
 #endif
 
-	
-	public:
-		
-		char Open(char* port, int baud, char bits, parity parity, char stopbit);
-		void Close(void);
-		char Write(char* buffer, int length);
-		int Read(char* buffer);
+
+public:
+
+								char Open(char* port, int baud, char bits, parity parity, char stopbit);
+								void Close(void);
+								char Write(char* buffer, int length);
+								int Read(char* buffer);
+								void clear();
 };
 
 #endif

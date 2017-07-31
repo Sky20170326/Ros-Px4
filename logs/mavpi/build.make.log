@@ -6,6 +6,6 @@
 /home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp:173:53: warning: deprecated conversion from string constant to ‘char*’ [-Wwrite-strings]
          serial.Open("/dev/ttyUSB0", 115200, 8, NO, 1);
                                                      ^
-/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp:270:278: warning: format not a string literal and no format arguments [-Wformat-security]
+/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp:273:278: warning: format not a string literal and no format arguments [-Wformat-security]
 [ 40%] [32m[1mLinking CXX executable /home/feilong/Ros-Cat/devel/.private/mavpi/lib/mavpi/mavpi_node[0m
 [100%] Built target mavpi_node

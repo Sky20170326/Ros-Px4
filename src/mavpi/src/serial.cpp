@@ -133,7 +133,7 @@
 		return 1;
 	}
 
-	int serial::Read(char* buffer)
+	int serial::Read(char* buffer,int maxNum)
 	{
 		DWORD r = 1;
 		int length = 0;
@@ -316,6 +316,11 @@
 		}
 
 		return length;
+	}
+
+	void serial::clear()
+	{
+		tcflush(m_fd,TCIFLUSH);
 	}
 
 #endif

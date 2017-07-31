@@ -72,7 +72,7 @@ float rec_x = 0,
       rec_y = 0,
       rec_z = 0,
       rec_yaw = 0;
-char buffer[BufferLength];
+char buffer[BUFFER_SIZE];
 string buff = "";
 bool save = false;
 int length = 0;
@@ -113,6 +113,7 @@ int main(int argc, char **argv)
 {
         ROS_INFO("System init ...");
 
+        serial.Open("/dev/ttyUSB0", 115200, 8, NO, 1);
 
         ros::init(argc, argv, "offb_node");
         ros::NodeHandle nh;
@@ -160,7 +161,6 @@ int main(int argc, char **argv)
                 ros::spinOnce();
                 rate.sleep();
         }
-        ROS_INFO("pre fished!");
 
         mavros_msgs::SetMode offb_set_mode;
         offb_set_mode.request.custom_mode = "OFFBOARD";
@@ -170,8 +170,10 @@ int main(int argc, char **argv)
 
         ros::Time last_request = ros::Time::now();
 
-        serial.Open("/dev/ttyUSB0", 115200, 8, NO, 1);
+        serial.clear();
 
+        ROS_INFO("pre fished!");
+        
         while(ros::ok()) {
 
 #ifdef simulator
@@ -206,6 +208,7 @@ int main(int argc, char **argv)
 
                 //check serial data
                 int bLength = serial.Read(buffer);
+
                 for (int i = 0; i < bLength; i++)
                 {
                         if(readFilter(buffer + i))
@@ -221,6 +224,7 @@ int main(int argc, char **argv)
                                         SerialCallBack(buff);
                                         save = false;
                                         buff.clear();
+                                        serial.clear();
                                 }
 
                                 if(save)
@@ -229,6 +233,7 @@ int main(int argc, char **argv)
                                 }
                         }
                 }
+
 
                 //set status led
 
