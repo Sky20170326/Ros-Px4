@@ -4,12 +4,12 @@
 timeout::timeout(int time)
 {
     m_maxTime = time;
-    m_state = 0;
+    m_state   = 0;
 }
 
 void timeout::start(void)
 {
-    m_time = clock();
+    m_time  = clock();
     m_state = 1;
 }
 
