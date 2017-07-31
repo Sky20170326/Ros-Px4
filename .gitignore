@@ -40,3 +40,21 @@ devel
 *.tags1
 
 *.includecache
+
+*.cmake
+
+src/mavpi/src/SerialCom/Makefile
+
+*.marks
+
+*.cxx
+
+*.check_cache
+
+*.bin
+
+*.make
+
+src/mavpi/src/SerialCom/CMakeCache\.txt
+
+src/mavpi/src/SerialCom/CMakeFiles/
