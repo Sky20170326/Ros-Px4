@@ -221,7 +221,11 @@ void showInfo(geometry_msgs::Vector3 eular)
 int main(int argc, char** argv)
 {
     ROS_INFO("System init ...");
+#ifdef RPI
+    serial.Open("/dev/ttyACM0", 115200, 8, NO, 1);
+#else
     serial.Open("/dev/ttyUSB0", 115200, 8, NO, 1);
+#endif
     ros::init(argc, argv, "mavpi_node");
     // ros节点
     ros::NodeHandle nh;
