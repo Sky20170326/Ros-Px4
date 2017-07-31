@@ -976,79 +976,111 @@ makeDownPack	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/protocol.c	/^download
 unpack	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/protocol.c	/^int unpack(char * str,int * p,int maxLength)$/;"	function	line:89	signature:(char * str,int * p,int maxLength)
 unpackUp	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/protocol.c	/^bool unpackUp (char * str,upload_s * p)$/;"	function	line:116	signature:(char * str,upload_s * p)
 unpackDown	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/protocol.c	/^bool unpackDown (char * str,download_s * p)$/;"	function	line:132	signature:(char * str,download_s * p)
-stru	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char stru[20];$/;"	variable	line:4
-packUpload	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char * packUpload(upload_s *pack)$/;"	function	line:6	signature:(upload_s *pack)
-strd	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char strd[20];$/;"	variable	line:22
-packDownload	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char * packDownload(download_s * pack)$/;"	function	line:23	signature:(download_s * pack)
-sumcheck	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^int sumcheck(int * addr,int sumCheck)$/;"	function	line:43	signature:(int * addr,int sumCheck)
-upIndex	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^int upIndex = 0;$/;"	variable	line:54
-makeUpPack	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^upload_s makeUpPack(float x,float y,float z,float yaw)$/;"	function	line:56	signature:(float x,float y,float z,float yaw)
-downIndex	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^int downIndex = 0;$/;"	variable	line:73
-makeDownPack	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^download_s makeDownPack(float x,float y,float z,float yaw,$/;"	function	line:74	signature:(float x,float y,float z,float yaw, float x_set,float y_set,float z_set,float yaw_set)
-unpack	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^int unpack(char * str,int * p,int maxLength)$/;"	function	line:95	signature:(char * str,int * p,int maxLength)
-unpackUp	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool unpackUp (char * str,upload_s * p)$/;"	function	line:131	signature:(char * str,upload_s * p)
-unpackDown	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool unpackDown (char * str,download_s * p)$/;"	function	line:161	signature:(char * str,download_s * p)
-readFilter	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool readFilter(char * c)$/;"	function	line:174	signature:(char * c)
-CheckString	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool CheckString(char *c)$/;"	function	line:183	signature:(char *c)
-_H_PRO_	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^#define _H_PRO_$/;"	macro	line:2
-DIV	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^#define DIV /;"	macro	line:14
-splitChar	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^#define splitChar /;"	macro	line:15
-head	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int head;$/;"	member	line:19	struct:__anon1
-index	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int index;$/;"	member	line:20	struct:__anon1
-x	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int x,y,z,yaw;$/;"	member	line:21	struct:__anon1
-y	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int x,y,z,yaw;$/;"	member	line:21	struct:__anon1
-z	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int x,y,z,yaw;$/;"	member	line:21	struct:__anon1
-yaw	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int x,y,z,yaw;$/;"	member	line:21	struct:__anon1
-div	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int div;$/;"	member	line:22	struct:__anon1
-sumcheck	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int sumcheck;$/;"	member	line:23	struct:__anon1
-tail	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int tail;$/;"	member	line:25	struct:__anon1
-upload_s	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^} upload_s;$/;"	typedef	line:26	typeref:struct:__anon1
-head	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int head;$/;"	member	line:30	struct:__anon2
-index	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int index;$/;"	member	line:31	struct:__anon2
-x	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int x,y,z,yaw;$/;"	member	line:32	struct:__anon2
-y	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int x,y,z,yaw;$/;"	member	line:32	struct:__anon2
-z	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int x,y,z,yaw;$/;"	member	line:32	struct:__anon2
-yaw	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int x,y,z,yaw;$/;"	member	line:32	struct:__anon2
-x_set	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int x_set,y_set,z_set,yaw_set;$/;"	member	line:33	struct:__anon2
-y_set	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int x_set,y_set,z_set,yaw_set;$/;"	member	line:33	struct:__anon2
-z_set	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int x_set,y_set,z_set,yaw_set;$/;"	member	line:33	struct:__anon2
-yaw_set	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int x_set,y_set,z_set,yaw_set;$/;"	member	line:33	struct:__anon2
-div	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int div;$/;"	member	line:34	struct:__anon2
-sumcheck	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int sumcheck;$/;"	member	line:35	struct:__anon2
-tail	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^        int tail;$/;"	member	line:37	struct:__anon2
-download_s	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^} download_s;$/;"	typedef	line:38	typeref:struct:__anon2
 Opt	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^struct termios Opt;$/;"	variable	line:10	typeref:struct:termios
 flSerialPort	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^flSerialPort::flSerialPort(char * portName,int bandRate)$/;"	function	line:12	class:flSerialPort	signature:(char * portName,int bandRate)
 flwrite	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^bool flSerialPort::flwrite(string str)$/;"	function	line:21	class:flSerialPort	signature:(string str)
 flread	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom.cpp	/^bool flSerialPort::flread()$/;"	function	line:30	class:flSerialPort	signature:()
-Open	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^	char serial::Open(char* port, int baud, char bits, parity parity, char stopbit)$/;"	function	line:11	class:serial	signature:(char* port, int baud, char bits, parity parity, char stopbit)
-Close	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^	void serial::Close(void)$/;"	function	line:105	class:serial	signature:(void)
-Write	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^	char serial::Write(char* buffer, int length)$/;"	function	line:111	class:serial	signature:(char* buffer, int length)
-Read	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^	int serial::Read(char* buffer)$/;"	function	line:136	class:serial	signature:(char* buffer)
-Open	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^	char serial::Open(char* port, int baud, char bits, parity parity, char stopbit)$/;"	function	line:158	class:serial	signature:(char* port, int baud, char bits, parity parity, char stopbit)
-Close	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^	void serial::Close(void)$/;"	function	line:257	class:serial	signature:(void)
-Write	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^	char serial::Write(char* buffer, int length)$/;"	function	line:270	class:serial	signature:(char* buffer, int length)
-Read	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^	int serial::Read(char* buffer)$/;"	function	line:292	class:serial	signature:(char* buffer)
+state_cb	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void state_cb(const mavros_msgs::State::ConstPtr& msg) { current_state = *msg; }$/;"	function	line:27	signature:(const mavros_msgs::State::ConstPtr& msg)
+imu_status	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^sensor_msgs::Imu imu_status;$/;"	variable	line:29
+imu_state_cb	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void imu_state_cb(const sensor_msgs::Imu::ConstPtr& msg)$/;"	function	line:30	signature:(const sensor_msgs::Imu::ConstPtr& msg)
+pos_status	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^geometry_msgs::PoseStamped pos_status;$/;"	variable	line:36
+pose_state_cb	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void pose_state_cb(const geometry_msgs::PoseStamped::ConstPtr& msg)$/;"	function	line:37	signature:(const geometry_msgs::PoseStamped::ConstPtr& msg)
+dis_status	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^sensor_msgs::Range dis_status;$/;"	variable	line:43
+dis_state_cb	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void dis_state_cb(const sensor_msgs::Range::ConstPtr& msg)$/;"	function	line:44	signature:(const sensor_msgs::Range::ConstPtr& msg)
+xyz2Position	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^geometry_msgs::PoseStamped xyz2Position(float x, float y, float z)$/;"	function	line:50	signature:(float x, float y, float z)
+quad2eular	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^geometry_msgs::Vector3 quad2eular(geometry_msgs::Quaternion quad)$/;"	function	line:62	signature:(geometry_msgs::Quaternion quad)
+serial	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^serial serial;$/;"	variable	line:77
+setPos	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^geometry_msgs::Quaternion setPos;$/;"	variable	line:78
+checkUp	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void checkUp(char* s)$/;"	function	line:79	signature:(char* s)
+SerialCallBack	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void SerialCallBack(string str)$/;"	function	line:96	signature:(string str)
+waitRosConnect	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void waitRosConnect(ros::Rate& rate)$/;"	function	line:104	signature:(ros::Rate& rate)
+preOffboard	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void preOffboard(ros::Rate& rate, ros::Publisher& local_pos_pub)$/;"	function	line:115	signature:(ros::Rate& rate, ros::Publisher& local_pos_pub)
+sendStatusUseSerial	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void sendStatusUseSerial(geometry_msgs::Vector3 eular)$/;"	function	line:127	signature:(geometry_msgs::Vector3 eular)
+modeOffBoard	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void modeOffBoard(ros::NodeHandle& nh)$/;"	function	line:137	signature:(ros::NodeHandle& nh)
+arm	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void arm(ros::NodeHandle& nh)$/;"	function	line:149	signature:(ros::NodeHandle& nh)
+armAndModeOffboard	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void armAndModeOffboard(ros::NodeHandle& nh, ros::Time& last_request)$/;"	function	line:161	signature:(ros::NodeHandle& nh, ros::Time& last_request)
+checkSerialCmd	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void checkSerialCmd()$/;"	function	line:176	signature:()
+showInfo	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void showInfo(geometry_msgs::Vector3 eular)$/;"	function	line:206	signature:(geometry_msgs::Vector3 eular)
+main	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^int main(int argc, char** argv)$/;"	function	line:221	signature:(int argc, char** argv)
+stru	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char stru[BufferLength];$/;"	variable	line:4
+packUpload	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char* packUpload(upload_s* pack)$/;"	function	line:6	signature:(upload_s* pack)
+strd	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char strd[BufferLength];$/;"	variable	line:21
+packDownload	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^char* packDownload(download_s* pack)$/;"	function	line:22	signature:(download_s* pack)
+sumcheck	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^int sumcheck(int* addr, int sumCheck)$/;"	function	line:44	signature:(int* addr, int sumCheck)
+upIndex	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^int upIndex = 0;$/;"	variable	line:54
+makeUpPack	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^upload_s makeUpPack(float x, float y, float z, float yaw)$/;"	function	line:56	signature:(float x, float y, float z, float yaw)
+downIndex	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^int downIndex = 0;$/;"	variable	line:75
+makeDownPack	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^download_s makeDownPack(float x, float y, float z, float yaw,$/;"	function	line:76	signature:(float x, float y, float z, float yaw, float x_set, float y_set, float z_set, float yaw_set, float pitch, float roll, float dis)
+unpack	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^int unpack(char* str, int* p, int maxLength)$/;"	function	line:103	signature:(char* str, int* p, int maxLength)
+unpackUp	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool unpackUp(char* str, upload_s* p)$/;"	function	line:133	signature:(char* str, upload_s* p)
+unpackDown	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool unpackDown(char* str, download_s* p)$/;"	function	line:159	signature:(char* str, download_s* p)
+readFilter	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool readFilter(char* c)$/;"	function	line:172	signature:(char* c)
+CheckString	/home/feilong/Ros-Cat/src/mavpi/src/protocol.c	/^bool CheckString(char* c)$/;"	function	line:182	signature:(char* c)
+_H_PRO_	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^#define _H_PRO_$/;"	macro	line:2
+DIV	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^#define DIV /;"	macro	line:12
+BufferLength	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^#define BufferLength /;"	macro	line:13
+splitChar	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^#define splitChar /;"	macro	line:14
+head	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int head;$/;"	member	line:18	struct:__anon1
+index	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int index;$/;"	member	line:19	struct:__anon1
+x	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int x, y, z, yaw;$/;"	member	line:20	struct:__anon1
+y	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int x, y, z, yaw;$/;"	member	line:20	struct:__anon1
+z	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int x, y, z, yaw;$/;"	member	line:20	struct:__anon1
+yaw	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int x, y, z, yaw;$/;"	member	line:20	struct:__anon1
+div	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int div;$/;"	member	line:21	struct:__anon1
+sumcheck	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int sumcheck;$/;"	member	line:22	struct:__anon1
+tail	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int tail;$/;"	member	line:24	struct:__anon1
+upload_s	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^} upload_s;$/;"	typedef	line:25	typeref:struct:__anon1
+head	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int head;$/;"	member	line:29	struct:__anon2
+index	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int index;$/;"	member	line:30	struct:__anon2
+x	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int x, y, z, yaw;$/;"	member	line:31	struct:__anon2
+y	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int x, y, z, yaw;$/;"	member	line:31	struct:__anon2
+z	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int x, y, z, yaw;$/;"	member	line:31	struct:__anon2
+yaw	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int x, y, z, yaw;$/;"	member	line:31	struct:__anon2
+x_set	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int x_set, y_set, z_set, yaw_set;$/;"	member	line:32	struct:__anon2
+y_set	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int x_set, y_set, z_set, yaw_set;$/;"	member	line:32	struct:__anon2
+z_set	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int x_set, y_set, z_set, yaw_set;$/;"	member	line:32	struct:__anon2
+yaw_set	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int x_set, y_set, z_set, yaw_set;$/;"	member	line:32	struct:__anon2
+pitch	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int pitch;$/;"	member	line:33	struct:__anon2
+roll	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int roll;$/;"	member	line:34	struct:__anon2
+dis	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int dis;$/;"	member	line:35	struct:__anon2
+div	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int div;$/;"	member	line:36	struct:__anon2
+sumcheck	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int sumcheck;$/;"	member	line:37	struct:__anon2
+tail	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^    int tail;$/;"	member	line:39	struct:__anon2
+download_s	/home/feilong/Ros-Cat/src/mavpi/src/protocol.h	/^} download_s;$/;"	typedef	line:40	typeref:struct:__anon2
+Open	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^char serial::Open(char* port, int baud, char bits, parity parity, char stopbit)$/;"	function	line:11	class:serial	signature:(char* port, int baud, char bits, parity parity, char stopbit)
+Close	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^void serial::Close(void)$/;"	function	line:132	class:serial	signature:(void)
+Write	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^char serial::Write(char* buffer, int length)$/;"	function	line:137	class:serial	signature:(char* buffer, int length)
+Read	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^int serial::Read(char* buffer, int maxNum)$/;"	function	line:159	class:serial	signature:(char* buffer, int maxNum)
+Open	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^char serial::Open(char* port, int baud, char bits, parity parity, char stopbit)$/;"	function	line:182	class:serial	signature:(char* port, int baud, char bits, parity parity, char stopbit)
+Close	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^void serial::Close(void)$/;"	function	line:303	class:serial	signature:(void)
+Write	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^char serial::Write(char* buffer, int length)$/;"	function	line:314	class:serial	signature:(char* buffer, int length)
+Read	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^int serial::Read(char* buffer)$/;"	function	line:334	class:serial	signature:(char* buffer)
+clear	/home/feilong/Ros-Cat/src/mavpi/src/serial.cpp	/^void serial::clear()$/;"	function	line:362	class:serial	signature:()
+_SERIAL_H	/home/feilong/Ros-Cat/src/mavpi/src/serial.h	/^#define _SERIAL_H$/;"	macro	line:2
+BUFFER_SIZE	/home/feilong/Ros-Cat/src/mavpi/src/serial.h	/^#define BUFFER_SIZE /;"	macro	line:17
+TIME_OUT	/home/feilong/Ros-Cat/src/mavpi/src/serial.h	/^#define TIME_OUT /;"	macro	line:18
+parity	/home/feilong/Ros-Cat/src/mavpi/src/serial.h	/^enum parity {$/;"	enum	line:20
+NO	/home/feilong/Ros-Cat/src/mavpi/src/serial.h	/^    NO,$/;"	enumerator	line:21	enum:parity
+EVEN	/home/feilong/Ros-Cat/src/mavpi/src/serial.h	/^    EVEN,$/;"	enumerator	line:22	enum:parity
+ODD	/home/feilong/Ros-Cat/src/mavpi/src/serial.h	/^    ODD$/;"	enumerator	line:23	enum:parity
+serial	/home/feilong/Ros-Cat/src/mavpi/src/serial.h	/^class serial {$/;"	class	line:26
+m_fd	/home/feilong/Ros-Cat/src/mavpi/src/serial.h	/^    HANDLE m_fd;$/;"	member	line:29	class:serial
+m_conf	/home/feilong/Ros-Cat/src/mavpi/src/serial.h	/^    DCB m_conf;$/;"	member	line:30	class:serial
 timeout	/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp	/^timeout::timeout(int time)$/;"	function	line:4	class:timeout	signature:(int time)
 start	/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp	/^void timeout::start(void)$/;"	function	line:10	class:timeout	signature:(void)
 end	/home/feilong/Ros-Cat/src/mavpi/src/timeout.cpp	/^char timeout::end(void)$/;"	function	line:16	class:timeout	signature:(void)
+_TIMEOUT_H	/home/feilong/Ros-Cat/src/mavpi/src/timeout.h	/^#define _TIMEOUT_H$/;"	macro	line:2
+timeout	/home/feilong/Ros-Cat/src/mavpi/src/timeout.h	/^class timeout {$/;"	class	line:6
+m_time	/home/feilong/Ros-Cat/src/mavpi/src/timeout.h	/^    clock_t m_time;$/;"	member	line:8	class:timeout
+m_maxTime	/home/feilong/Ros-Cat/src/mavpi/src/timeout.h	/^    int m_maxTime;$/;"	member	line:9	class:timeout
+m_state	/home/feilong/Ros-Cat/src/mavpi/src/timeout.h	/^    char m_state;$/;"	member	line:10	class:timeout
 error	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void error(string msg)$/;"	function	line:9	signature:(string msg)
 info	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void info(string msg)$/;"	function	line:14	signature:(string msg)
 SerialHandle	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void SerialHandle(string buf)$/;"	function	line:19	signature:(string buf)
 serial	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^serial serial;$/;"	variable	line:24
 serialwritetest	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void serialwritetest()$/;"	function	line:25	signature:()
 serialReadTest	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void serialReadTest()$/;"	function	line:34	signature:()
-serialtest	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void serialtest()$/;"	function	line:59	signature:()
-checkUp	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void checkUp(char * s)$/;"	function	line:65	signature:(char * s)
-checkDown	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void checkDown(char * s)$/;"	function	line:75	signature:(char * s)
-main	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^int main (int argc, char *argv[])$/;"	function	line:85	signature:(int argc, char *argv[])
-state_cb	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void state_cb(const mavros_msgs::State::ConstPtr& msg){$/;"	function	line:27	signature:(const mavros_msgs::State::ConstPtr& msg)
-imu_status	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^sensor_msgs::Imu imu_status;$/;"	variable	line:31
-imu_state_cb	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void imu_state_cb(const sensor_msgs::Imu::ConstPtr& msg)$/;"	function	line:32	signature:(const sensor_msgs::Imu::ConstPtr& msg)
-pos_status	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^geometry_msgs::PoseStamped pos_status;$/;"	variable	line:38
-pose_state_cb	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void pose_state_cb(const geometry_msgs::PoseStamped::ConstPtr& msg)$/;"	function	line:39	signature:(const geometry_msgs::PoseStamped::ConstPtr& msg)
-dis_status	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^sensor_msgs::Range dis_status;$/;"	variable	line:45
-dis_state_cb	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void dis_state_cb(const sensor_msgs::Range::ConstPtr& msg)$/;"	function	line:46	signature:(const sensor_msgs::Range::ConstPtr& msg)
-xyz2Position	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^geometry_msgs::PoseStamped xyz2Position (float x,float y,float z)$/;"	function	line:52	signature:(float x,float y,float z)
-quad	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^void quad(float q0,float q1,float q2,float q3,float *pitch,float *roll,float *yaw)$/;"	function	line:63	signature:(float q0,float q1,float q2,float q3,float *pitch,float *roll,float *yaw)
-main	/home/feilong/Ros-Cat/src/mavpi/src/offb_node.cpp	/^int main(int argc, char **argv)$/;"	function	line:70	signature:(int argc, char **argv)
+serialtest	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void serialtest()$/;"	function	line:56	signature:()
+checkUp	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void checkUp(char* s)$/;"	function	line:62	signature:(char* s)
+checkDown	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^void checkDown(char* s)$/;"	function	line:72	signature:(char* s)
+main	/home/feilong/Ros-Cat/src/mavpi/src/SerialCom/test.cpp	/^int main(int argc, char* argv[])$/;"	function	line:82	signature:(int argc, char* argv[])
