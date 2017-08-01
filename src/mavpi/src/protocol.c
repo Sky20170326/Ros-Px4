@@ -24,7 +24,7 @@ char* packUpload(upload_s* pack)
 char  strd[BufferLength];
 char* packDownload(download_s* pack)
 {
-    sprintf(strd, "%c,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%c",
+    sprintf(strd, "%c,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%c",
         (char)pack->head,
         pack->index,
         pack->armed,
@@ -168,7 +168,7 @@ bool unpackUp(char* str, upload_s* p)
 bool unpackDown(char* str, download_s* p)
 {
     int* _p  = (int*)p;
-    int  num = unpack(str, p, sizeof(download_s) / sizeof(int));
+    int  num = unpack(str, _p, sizeof(download_s) / sizeof(int));
     //printf("\nthis:%d %d\n",num,sizeof(download_s) / sizeof(int));
     if (sizeof(download_s) / sizeof(int) == num)
         if (p->head == 's'
