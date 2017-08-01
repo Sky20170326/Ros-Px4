@@ -5,9 +5,12 @@ char stru[BufferLength];
 
 char* packUpload(upload_s* pack)
 {
-    sprintf(stru, "%c,%d,%d,%d,%d,%d,%d,%d,%c",
+    sprintf(stru, "%c,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%c",
         (char)pack->head,
         pack->index,
+        pack->ctrlMode,
+        pack->pitch,
+        pack->roll,
         pack->x,
         pack->y,
         pack->z,
@@ -24,6 +27,8 @@ char* packDownload(download_s* pack)
     sprintf(strd, "%c,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%c",
         (char)pack->head,
         pack->index,
+        pack->armed,
+        pack->flyMode,
         pack->x,
         pack->y,
         pack->z,
@@ -34,6 +39,8 @@ char* packDownload(download_s* pack)
         pack->yaw_set,
         pack->pitch,
         pack->roll,
+        pack->pitch_set,
+        pack->roll_set,
         pack->dis,
         pack->div,
         pack->sumcheck,
@@ -53,13 +60,17 @@ int sumcheck(int* addr, int sumCheck)
 
 int upIndex = 0;
 
-upload_s makeUpPack(float x, float y, float z, float yaw)
+upload_s makeUpPack(enum CtrlMode ctrlMode, float pitch, float roll,
+    float x, float y, float z, float yaw)
 {
     upload_s p;
     p.head  = (int)'r';
     p.index = upIndex++;
     if (upIndex >= 100)
         upIndex = 0;
+    p.ctrlMode  = (int)ctrlMode;
+    p.pitch     = (int)(pitch * DIV);
+    p.roll      = (int)(roll * DIV);
     p.x         = (int)(x * DIV);
     p.y         = (int)(y * DIV);
     p.z         = (int)(z * DIV);
@@ -73,15 +84,20 @@ upload_s makeUpPack(float x, float y, float z, float yaw)
 }
 
 int        downIndex = 0;
-download_s makeDownPack(float x, float y, float z, float yaw,
+download_s makeDownPack(enum planArmMode arm, enum planeFlyMode flyMode,
+    float x, float y, float z, float yaw,
     float x_set, float y_set, float z_set, float yaw_set,
-    float pitch, float roll, float dis)
+    float pitch, float roll,
+    float pitch_set, float roll_set,
+    float dis)
 {
     download_s p;
     p.head  = (int)'s';
     p.index = downIndex++;
     if (downIndex >= 100)
         downIndex = 0;
+    p.armed       = (int)arm;
+    p.flyMode     = (int)flyMode;
     p.x           = (int)(x * DIV);
     p.y           = (int)(y * DIV);
     p.z           = (int)(z * DIV);
@@ -92,6 +108,8 @@ download_s makeDownPack(float x, float y, float z, float yaw,
     p.yaw_set     = (int)(yaw_set * DIV);
     p.pitch       = (int)(pitch * DIV);
     p.roll        = (int)(roll * DIV);
+    p.pitch_set   = (int)(pitch_set * DIV);
+    p.roll_set    = (int)(roll_set * DIV);
     p.dis         = (int)(dis * DIV);
     p.div         = DIV;
     p.sumcheck    = 0;

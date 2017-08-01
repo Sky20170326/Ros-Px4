@@ -120,9 +120,21 @@ void preOffboard(ros::Rate& rate, ros::Publisher& local_pos_pub)
 
 void sendStatusUseSerial(geometry_msgs::Vector3 eular)
 {
-    download_s dp = makeDownPack(pos_status.pose.position.x, pos_status.pose.position.y,
-        pos_status.pose.position.z, eular.z, setPos.x, setPos.y,
-        setPos.z, setPos.w, eular.x, eular.y, dis_status.range);
+    download_s dp = makeDownPack(
+        (current_state.armed) ? Arm : NoArm,
+        (current_state.mode == "OFFBOARD") ? Stable : OffBoard,
+        pos_status.pose.position.x, pos_status.pose.position.y,
+        pos_status.pose.position.z,
+        eular.z,
+        setPos.x,
+        setPos.y,
+        setPos.z,
+        setPos.w,
+        eular.x,
+        eular.y,
+        0, //
+        0, //
+        dis_status.range);
     char* dt = packDownload(&dp);
     ROS_INFO(dt);
     serial.Write(dt, strlen(dt));
