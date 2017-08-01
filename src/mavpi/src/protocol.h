@@ -16,19 +16,26 @@ extern "C" {
 
 enum planArmMode {
     NoArm,
-    Arm
+    Arm,
+
+    planArmMode_max
 };
 
 enum planeFlyMode {
     Stable,
     Alt,
     Pos,
-    OffBoard
+    OffBoard,
+
+    planeFlyMode_max
 };
 
 enum CtrlMode {
+    NoCtl,
     Pose,
-    Raw
+    Raw,
+
+    CtrlMode_max
 };
 
 typedef struct

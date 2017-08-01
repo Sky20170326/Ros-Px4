@@ -70,10 +70,13 @@ geometry_msgs::Vector3 quad2eular(geometry_msgs::Quaternion quad)
 
 serial                    serial;
 geometry_msgs::Quaternion setPos;
+enum CtrlMode             ctrlMode;
 void checkUp(char* s)
 {
     upload_s upc;
     if (unpackUp(s, &upc)) {
+        ctrlMode = (enum CtrlMode)upc.ctrlMode;
+
         setPos.x = (float)upc.x / upc.div;
         setPos.y = (float)upc.y / upc.div;
         setPos.z = (float)upc.z / upc.div;
@@ -209,12 +212,19 @@ void checkSerialCmd()
     }
 }
 
+char CtrlModeMsg[CtrlMode_max][10] = {
+    "NoCtl",
+    "Pose",
+    "Raw"
+};
 void showInfo(geometry_msgs::Vector3 eular)
 {
     cout << (current_state.armed == true) ? "0" : "1";
     cout << '\t' << current_state.mode << endl;
     // show imu
     cout << ros::Time::now() << '\t' << endl;
+
+    ROS_INFO("Ctrl Mode => [%s]", CtrlModeMsg[ctrlMode]);
 
     ROS_INFO("Euler => x: [%f], y: [%f], z: [%f]", eular.x, eular.y, eular.z);
 
