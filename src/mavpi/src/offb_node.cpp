@@ -240,7 +240,7 @@ int main(int argc, char** argv)
                 xyzyaw2Position(0, 0, 1.0, 0));
         } else if (msg.Data.ctrlMode == Raw) {
             ROS_WARN("Raw Ctl Not pass test!");
-            rawCtrl(msg.Data.roll,msg.Data. pitch,msg.Data. setPos.w,msg.Data. setPos.z, nh);
+            rawCtrl(msg.Data.roll, msg.Data.pitch, msg.Data.setPos.w, msg.Data.setPos.z, nh);
         } else {
             ROS_WARN("Ctl Mode Err!");
         }
@@ -251,7 +251,7 @@ int main(int argc, char** argv)
         showInfo(eular);
 
         // pub to mcu
-        msg.sendStatusUseSerial(eular,current_state,pos_status,dis_status);
+        msg.sendStatusUseSerial(eular, current_state, pos_status, dis_status);
 
         ros::spinOnce();
         rate.sleep();
