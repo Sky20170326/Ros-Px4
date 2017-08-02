@@ -6,6 +6,7 @@
 #include <mavros_msgs/SetMode.h>
 #include <mavros_msgs/State.h>
 #include <ros/ros.h>
+#include <tf/tf.h>
 //#include <sensor_msgs/State.h>
 #include <sensor_msgs/Imu.h>
 #include <sensor_msgs/Range.h>
@@ -16,7 +17,7 @@
 
 using namespace std;
 
-//#define simulator
+#define simulator
 
 mavros_msgs::State current_state;
 void state_cb(const mavros_msgs::State::ConstPtr& msg) { current_state = *msg; }
@@ -42,13 +43,38 @@ void dis_state_cb(const sensor_msgs::Range::ConstPtr& msg)
     dis_status = *msg;
 }
 
-geometry_msgs::PoseStamped xyz2Position(float x, float y, float z)
+// int                        j = 0;
+// float                      i = 0;
+geometry_msgs::PoseStamped xyz2Position(float x, float y, float z, float yaw)
 {
     geometry_msgs::PoseStamped pose;
 
     pose.pose.position.x = x;
     pose.pose.position.y = y;
     pose.pose.position.z = z;
+
+    // pose.pose.orientation.x = 0;
+    // pose.pose.orientation.y = 0;
+    // if (j++ > 300)
+    //     i = i + 0.1;
+    // pose.pose.orientation.z = i;
+    // pose.pose.orientation.w = 0;
+
+    // pose.pose.orientation = tf::createQuaternionMsgFromRollPitchYaw(0, 0, i);
+    pose.pose.orientation = tf::createQuaternionMsgFromYaw(yaw / 360 * 2 * 3.14);
+    //ROS_INFO("yaw => [%f] i => [%d]", i, j);
+
+    return pose;
+}
+
+geometry_msgs::PoseStamped xyz2Orientation(float x, float y, float z, float w)
+{
+    geometry_msgs::PoseStamped pose;
+
+    pose.pose.orientation.x = x;
+    pose.pose.orientation.y = y;
+    pose.pose.orientation.z = z;
+    pose.pose.orientation.w = w;
 
     return pose;
 }
@@ -167,6 +193,18 @@ void arm(ros::NodeHandle& nh)
     }
 }
 
+void disArm(ros::NodeHandle& nh)
+{
+    mavros_msgs::CommandBool arm_cmd;
+    arm_cmd.request.value = false;
+
+    ros::ServiceClient arming_client = nh.serviceClient<mavros_msgs::CommandBool>("mavros/cmd/arming");
+
+    if (arming_client.call(arm_cmd) && arm_cmd.response.success) {
+        ROS_INFO("Vehicle disrmed");
+    }
+}
+
 void armAndModeOffboard(ros::NodeHandle& nh, ros::Time& last_request)
 {
     // turn board into offboard mode
@@ -224,19 +262,33 @@ void showInfo(geometry_msgs::Vector3 eular)
     // show imu
     cout << ros::Time::now() << '\t' << endl;
 
-    ROS_INFO("Ctrl Mode => [%s]", CtrlModeMsg[ctrlMode]);
+    ROS_INFO("Ctrl Mode => [%s]",
+        CtrlModeMsg[ctrlMode]);
 
-    ROS_INFO("Euler => x: [%f], y: [%f], z: [%f]", eular.x, eular.y, eular.z);
+    ROS_INFO("Set POSE => x: [%f], y: [%f], z: [%f]",
+        setPos.x,
+        setPos.y,
+        setPos.z);
 
-    ROS_INFO("POSE => x: [%f], y: [%f], z: [%f]", pos_status.pose.position.x,
-        pos_status.pose.position.y, pos_status.pose.position.z);
+    ROS_INFO("Euler => x: [%f], y: [%f], z: [%f]",
+        eular.x,
+        eular.y,
+        eular.z);
 
-    ROS_INFO("DIS => d: [%f]", dis_status.range);
+    ROS_INFO("POSE => x: [%f], y: [%f], z: [%f]",
+        pos_status.pose.position.x,
+        pos_status.pose.position.y,
+        pos_status.pose.position.z);
+
+    ROS_INFO("DIS => d: [%f]",
+        dis_status.range);
 }
 
 int main(int argc, char** argv)
 {
     ROS_INFO("System init ...");
+
+// #define RPI
 #ifdef RPI
     serial.Open("/dev/ttyACM0", 115200, 8, NO, 1);
 #else
@@ -245,6 +297,12 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "mavpi_node");
     // ros节点
     ros::NodeHandle nh;
+
+// 锁机
+#ifdef simulator
+    disArm(nh);
+#endif
+
     //订阅器
     ros::Subscriber state_sub = nh.subscribe<mavros_msgs::State>("mavros/state", 10, state_cb);
     ros::Subscriber imu_sub   = nh.subscribe<sensor_msgs::Imu>("mavros/imu/data", 10, imu_state_cb);
@@ -255,6 +313,8 @@ int main(int argc, char** argv)
     //发布器
     ros::Publisher local_pos_pub = nh.advertise<geometry_msgs::PoseStamped>(
         "mavros/setpoint_position/local", 10);
+    ros::Publisher local_pos_raw_pub = nh.advertise<mavros_msgs::PositionTarget>(
+        "mavros/setpoint_raw/target_local", 10);
     //
     // the setpoint publishing rate MUST be faster than 2Hz
     ros::Rate rate(20.0);
@@ -263,10 +323,13 @@ int main(int argc, char** argv)
     waitRosConnect(rate);
     //准备offboard延时
     preOffboard(rate, local_pos_pub);
+
+#ifdef simulator
     // offboard
-    // modeOffBoard(nh);
+    modeOffBoard(nh);
     // arm
-    // arm(nh);
+    arm(nh);
+#endif
     // log last request time
     ros::Time last_request = ros::Time::now();
     // clear serial buffer
@@ -277,8 +340,24 @@ int main(int argc, char** argv)
         // set status led
 
         // pubpos
-        local_pos_pub.publish(xyz2Position(0, 0, 1.0));
+        if (ctrlMode == Pose) {
+            local_pos_pub.publish(
+                //xyz2Position(setPos.x, setPos.y, setPos.z));
+                xyz2Position(0, 0, 1.0));
+            //not pass test
+            // xyz2Orientation(setPos.x, setPos.y, setPos.z, setPos.w));
+            //xyz2Orientation(0, 0, 1, 1.7));
 
+            // mavros_msgs::PositionTarget poss_yaw;
+            // poss_yaw.yaw      = 1.7;
+            // poss_yaw.yaw_rate = 0.1;
+            // local_pos_raw_pub.publish(poss_yaw);
+
+        } else if (ctrlMode == Raw) {
+            ROS_WARN("Raw Ctl not Support");
+        } else {
+            ROS_WARN("Ctl Mode Err!");
+        }
         // calc eular
         geometry_msgs::Vector3 eular = quad2eular(imu_status.orientation);
 
