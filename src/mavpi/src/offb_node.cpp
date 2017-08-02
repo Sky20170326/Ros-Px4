@@ -45,7 +45,7 @@ void dis_state_cb(const sensor_msgs::Range::ConstPtr& msg)
 
 // int                        j = 0;
 // float                      i = 0;
-geometry_msgs::PoseStamped xyz2Position(float x, float y, float z, float yaw)
+geometry_msgs::PoseStamped xyzyaw2Position(float x, float y, float z, float yaw)
 {
     geometry_msgs::PoseStamped pose;
 
@@ -53,28 +53,7 @@ geometry_msgs::PoseStamped xyz2Position(float x, float y, float z, float yaw)
     pose.pose.position.y = y;
     pose.pose.position.z = z;
 
-    // pose.pose.orientation.x = 0;
-    // pose.pose.orientation.y = 0;
-    // if (j++ > 300)
-    //     i = i + 0.1;
-    // pose.pose.orientation.z = i;
-    // pose.pose.orientation.w = 0;
-
-    // pose.pose.orientation = tf::createQuaternionMsgFromRollPitchYaw(0, 0, i);
     pose.pose.orientation = tf::createQuaternionMsgFromYaw(yaw / 360 * 2 * 3.14);
-    //ROS_INFO("yaw => [%f] i => [%d]", i, j);
-
-    return pose;
-}
-
-geometry_msgs::PoseStamped xyz2Orientation(float x, float y, float z, float w)
-{
-    geometry_msgs::PoseStamped pose;
-
-    pose.pose.orientation.x = x;
-    pose.pose.orientation.y = y;
-    pose.pose.orientation.z = z;
-    pose.pose.orientation.w = w;
 
     return pose;
 }
@@ -140,7 +119,7 @@ void preOffboard(ros::Rate& rate, ros::Publisher& local_pos_pub)
     ROS_INFO("pre offboard...");
     // send a few setpoints before starting
     for (int i = 100; ros::ok() && i > 0; --i) {
-        local_pos_pub.publish(xyz2Position(0, 0, 0));
+        local_pos_pub.publish(xyzyaw2Position(0, 0, 0, 0));
         ros::spinOnce();
         rate.sleep();
     }
@@ -342,16 +321,7 @@ int main(int argc, char** argv)
         // pubpos
         if (ctrlMode == Pose) {
             local_pos_pub.publish(
-                //xyz2Position(setPos.x, setPos.y, setPos.z));
-                xyz2Position(0, 0, 1.0));
-            //not pass test
-            // xyz2Orientation(setPos.x, setPos.y, setPos.z, setPos.w));
-            //xyz2Orientation(0, 0, 1, 1.7));
-
-            // mavros_msgs::PositionTarget poss_yaw;
-            // poss_yaw.yaw      = 1.7;
-            // poss_yaw.yaw_rate = 0.1;
-            // local_pos_raw_pub.publish(poss_yaw);
+                xyzyaw2Position(0, 0, 1.0, 0));
 
         } else if (ctrlMode == Raw) {
             ROS_WARN("Raw Ctl not Support");
