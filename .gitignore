@@ -58,3 +58,5 @@ src/mavpi/src/SerialCom/Makefile
 src/mavpi/src/SerialCom/CMakeCache\.txt
 
 src/mavpi/src/SerialCom/CMakeFiles/
+
+src/mavpi/src/SerialCom/SerialCom

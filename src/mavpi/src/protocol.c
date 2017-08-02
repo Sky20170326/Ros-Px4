@@ -48,12 +48,11 @@ char* packDownload(download_s* pack)
     return strd;
 }
 
-int sumcheck(int* addr, int sumCheck)
+int sumcheck(int* addr, int dataLength)
 {
-    int num = -sumCheck;
-    addr++;
-    while (*addr != '\n') {
-        num += *addr++;
+    int num = 0;
+    for (int i = 0; i < dataLength - 2; i++) {
+        num += *(addr + i);
     }
     return abs(num % 100);
 }
@@ -66,6 +65,7 @@ upload_s makeUpPack(enum CtrlMode ctrlMode, float pitch, float roll,
     upload_s p;
     p.head  = (int)'r';
     p.index = upIndex++;
+    // p.index = 7;
     if (upIndex >= 100)
         upIndex = 0;
     p.ctrlMode  = (int)ctrlMode;
@@ -79,7 +79,7 @@ upload_s makeUpPack(enum CtrlMode ctrlMode, float pitch, float roll,
     p.sumcheck  = 0;
     p.tail      = (int)'\n';
     //printf("check!");
-    p.sumcheck = sumcheck((int*)&p, p.sumcheck);
+    p.sumcheck = sumcheck((int*)&p, sizeof(upload_s) / sizeof(int));
     return p;
 }
 
@@ -114,22 +114,23 @@ download_s makeDownPack(enum planArmMode arm, enum planeFlyMode flyMode,
     p.div         = DIV;
     p.sumcheck    = 0;
     p.tail        = (int)'\n';
-    p.sumcheck    = sumcheck((int*)&p, p.sumcheck);
+    p.sumcheck    = sumcheck((int*)&p, sizeof(download_s) / sizeof(int));
     return p;
 }
 
 int unpack(char* str, int* p, int maxLength)
 {
     //printf("%s \n",str);
-    int* _p = p;
+    //int* _p = p;
 
-    int  packLength      = 0;
+    //int  packLength      = 0;
     char splitCharPtr[2] = { splitChar, '\0' };
-
+    char str_temp[BufferLength];
+    strcpy(str_temp, str);
     char* s;
-    s    = strtok(str, splitCharPtr);
+    s    = strtok(str_temp, splitCharPtr);
     *p++ = *s;
-    //printf("%s \n",s);
+    // printf("%s \n", s);
 
     int num = 1;
     while (s = strtok(NULL, splitCharPtr)) {
@@ -150,8 +151,8 @@ int unpack(char* str, int* p, int maxLength)
 
 bool unpackUp(char* str, upload_s* p)
 {
-    //printf("check%d!\n",sizeof(upload_s) / sizeof(int));
-    //printf("check%d!\n",unpack(str,p,sizeof(upload_s) / sizeof(int)));
+    // printf("check%d!\n", sizeof(upload_s) / sizeof(int));
+    // printf("check%d!\n", unpack(str, p, sizeof(upload_s) / sizeof(int)));
 
     int* _p = (int*)p;
     //length check
@@ -159,7 +160,7 @@ bool unpackUp(char* str, upload_s* p)
     if (sizeof(upload_s) / sizeof(int) == num)
         if (p->head == 'r'
             && p->tail == '\n'
-            && p->sumcheck == sumcheck((int*)p, p->sumcheck))
+            && p->sumcheck == sumcheck((int*)p, sizeof(upload_s) / sizeof(int)))
             return true;
 
     return false;
@@ -173,7 +174,7 @@ bool unpackDown(char* str, download_s* p)
     if (sizeof(download_s) / sizeof(int) == num)
         if (p->head == 's'
             && p->tail == '\n'
-            && p->sumcheck == sumcheck((int*)p, p->sumcheck))
+            && p->sumcheck == sumcheck((int*)p, sizeof(download_s) / sizeof(int)))
             return true;
 
     return false;
