@@ -44,6 +44,9 @@ void dis_state_cb(const sensor_msgs::Range::ConstPtr& msg)
     dis_status = *msg;
 }
 
+#define PI 3.14
+#define Rad2Deg(r) ((r) / PI * 180)
+#define Deg2Reg(d) ((d) / 180 * PI)
 // int                        j = 0;
 // float                      i = 0;
 geometry_msgs::PoseStamped xyzyaw2Position(float x, float y, float z, float yaw)
@@ -54,11 +57,12 @@ geometry_msgs::PoseStamped xyzyaw2Position(float x, float y, float z, float yaw)
     pose.pose.position.y = y;
     pose.pose.position.z = z;
 
-    pose.pose.orientation = tf::createQuaternionMsgFromYaw(yaw / 360 * 2 * 3.14);
+    pose.pose.orientation = tf::createQuaternionMsgFromYaw(Deg2Reg(yaw));
 
     return pose;
 }
 
+/*
 geometry_msgs::PoseStamped rollpitchyaw2Position(float z, float roll, float pitch, float yaw)
 {
     geometry_msgs::PoseStamped pose;
@@ -67,9 +71,24 @@ geometry_msgs::PoseStamped rollpitchyaw2Position(float z, float roll, float pitc
     pose.pose.position.y = 0;
     pose.pose.position.z = z;
 
-    pose.pose.orientation = tf::createQuaternionMsgFromRollPitchYaw(roll / 360 * 2 * 3.14, pitch / 360 * 2 * 3.14, yaw / 360 * 2 * 3.14);
+    pose.pose.orientation = tf::createQuaternionMsgFromRollPitchYaw(Deg2Reg(roll), Deg2Reg(pitch), Deg2Reg(yaw));
 
     return pose;
+}*/
+
+void rawCtrl(float r, float p, float y, float thrust, ros::NodeHandle& nh)
+{
+    ros::Publisher local_pos_raw_pub = nh.advertise<mavros_msgs::AttitudeTarget>(
+        "mavros/setpoint_raw/attitude", 10);
+
+    mavros_msgs::AttitudeTarget msg;
+
+    msg.thrust      = thrust;
+    msg.orientation = tf::createQuaternionMsgFromRollPitchYaw(Deg2Reg(r), Deg2Reg(p), Deg2Reg(y));
+
+    ROS_INFO("Raw Ctrl => r: [%f] p: [%f] y: [%f]h: [%f]", r, p, y, thrust);
+
+    local_pos_raw_pub.publish(msg);
 }
 
 //四元数转欧拉角
@@ -90,6 +109,7 @@ geometry_msgs::Vector3 quad2eular(geometry_msgs::Quaternion quad)
 serial                    serial;
 geometry_msgs::Quaternion setPos;
 enum CtrlMode             ctrlMode;
+float                     pitch = 0, roll = 0;
 void checkUp(char* s)
 {
     upload_s upc;
@@ -100,10 +120,23 @@ void checkUp(char* s)
         setPos.y = (float)upc.y / upc.div;
         setPos.z = (float)upc.z / upc.div;
         setPos.w = (float)upc.yaw / upc.div;
+
+        pitch = (float)upc.pitch / upc.div;
+        roll  = (float)upc.roll / upc.div;
         // check data
         // r,0,0,0,150,70,100,20,
-        ROS_INFO("REC CTRL CMD => x: [%f], y: [%f], z: [%f], yaw: [%f]", setPos.x,
-            setPos.y, setPos.z, setPos.w);
+        switch (ctrlMode) {
+        case Pose:
+            ROS_INFO("REC CTRL CMD => x: [%f], y: [%f], z: [%f], yaw: [%f]", setPos.x, setPos.y, setPos.z, setPos.w);
+            break;
+
+        case Raw:
+            ROS_INFO("REC CTRL CMD => r: [%f], p: [%f], yaw: [%f], th: [%f]", roll, pitch, setPos.w, setPos.z);
+            break;
+
+        default:
+            break;
+        }
     } else {
         ROS_WARN("REC CMD ERR!");
     }
@@ -306,8 +339,7 @@ int main(int argc, char** argv)
     //发布器
     ros::Publisher local_pos_pub = nh.advertise<geometry_msgs::PoseStamped>(
         "mavros/setpoint_position/local", 10);
-    ros::Publisher local_pos_raw_pub = nh.advertise<mavros_msgs::AttitudeTarget>(
-        "mavros/setpoint_raw/attitude", 10);
+
     //
     // the setpoint publishing rate MUST be faster than 2Hz
     ros::Rate rate(20.0);
@@ -335,88 +367,13 @@ int main(int argc, char** argv)
         // set status led
 
         // pubpos
-        /*if (ctrlMode == Pose) {
+        if (ctrlMode == Pose) {
             local_pos_pub.publish(
                 xyzyaw2Position(0, 0, 1.0, 0));
-        } else if (ctrlMode == Raw) {*/
-        if (1) {
-            //ROS_WARN("Raw Ctl not Support");
-            static float r = 0.0;
-            static float p = 0.0;
-            static float y = 0.0;
-            static float h = 1.0;
+        } else if (ctrlMode == Raw) {
+            ROS_WARN("Raw Ctl Not pass test!");
+            rawCtrl(roll, pitch, setPos.w, setPos.z, nh);
 
-            if (kbhit()) {
-                switch (getchar()) {
-                case 'q':
-                    r++;
-                    break;
-
-                case 'w':
-                    r--;
-                    break;
-
-                case 'a':
-                    p++;
-                    break;
-
-                case 's':
-                    p--;
-                    break;
-
-                case 'z':
-                    y++;
-                    break;
-
-                case 'x':
-                    y--;
-                    break;
-
-                case 'k':
-                    h++;
-                    break;
-
-                case 'l':
-                    h--;
-                    break;
-
-                case ' ':
-                    arm(nh);
-                    break;
-
-                case 'n':
-                    disArm(nh);
-                    break;
-
-                case 'b':
-                    modeOffBoard(nh);
-                    break;
-
-                case 'e':
-                    kp++;
-                    break;
-
-                case 'r':
-                    kp--;
-                    break;
-
-                default:
-                    break;
-                }
-            }
-            // rollpitchyaw2Position(1, 0, 0, 0);
-            // local_pos_pub.publish(rollpitchyaw2Position(h, r, p, y));
-            mavros_msgs::AttitudeTarget msg;
-
-            error           = h - pos_status.pose.position.z;
-            pid             = kp * error;
-            lastz           = pos_status.pose.position.z;
-            msg.thrust      = (pid < 0) ? 0 : pid;
-            msg.orientation = tf::createQuaternionMsgFromRollPitchYaw(r, p, y);
-            // local_pos_pub.publish(rollpitchyaw2Position(h, r, p, y));
-
-            local_pos_raw_pub.publish(msg);
-            ROS_INFO("STATUS => r: [%f] p: [%f] y: [%f]h: [%f] pid:[%f] kp: [%f]", r, p, y, h, pid, kp);
         } else {
             ROS_WARN("Ctl Mode Err!");
         }

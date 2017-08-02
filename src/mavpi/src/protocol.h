@@ -14,6 +14,7 @@ extern "C" {
 #define BufferLength 100
 #define splitChar ','
 
+//锁
 enum planArmMode {
     NoArm,
     Arm,
@@ -21,6 +22,7 @@ enum planArmMode {
     planArmMode_max
 };
 
+///飞行模式
 enum planeFlyMode {
     Stable,
     Alt,
@@ -30,21 +32,23 @@ enum planeFlyMode {
     planeFlyMode_max
 };
 
+//控制模式
 enum CtrlMode {
-    NoCtl,
-    Pose,
-    Raw,
+    NoCtl, //未控制
+    Pose, //点控制
+    Raw, //原始控制
 
     CtrlMode_max
 };
 
+//上传报文
 typedef struct
 {
     int head;
     int index;
-    int ctrlMode;
-    int pitch, roll;
-    int x, y, z, yaw;
+    int ctrlMode; //控制模式
+    int pitch, roll; //原始模式
+    int x, y, z, yaw; //定点模式，原始模式时z为油门，yaw偏航
     int div;
     int sumcheck;
     //char split = ',';
@@ -55,15 +59,15 @@ typedef struct
 {
     int head;
     int index;
-    int armed;
-    int flyMode;
-    int x, y, z, yaw;
-    int x_set, y_set, z_set, yaw_set;
-    int pitch;
+    int armed; //锁
+    int flyMode; //飞行模式
+    int x, y, z, yaw; //位置信息
+    int x_set, y_set, z_set, yaw_set; //位置设置
+    int pitch; //当前值
     int roll;
-    int pitch_set, roll_set;
-    int dis;
-    int div;
+    int pitch_set, roll_set; //设定值
+    int dis; //地面距离
+    int div; //倍数
     int sumcheck;
     //char split = ',';
     int tail;
