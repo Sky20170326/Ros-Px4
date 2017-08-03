@@ -114,13 +114,15 @@ void modeOffBoard(ros::NodeHandle& nh)
 
 void modeLOITER(ros::NodeHandle& nh)
 {
-    ros::ServiceClient set_mode_client = nh.serviceClient<mavros_msgs::SetMode>("mavros/set_mode");
+    if (current_state.mode != "AUTO.LOITER") {
+        ros::ServiceClient set_mode_client = nh.serviceClient<mavros_msgs::SetMode>("mavros/set_mode");
 
-    mavros_msgs::SetMode offb_set_mode;
-    offb_set_mode.request.custom_mode = "AUTO.LOITER";
+        mavros_msgs::SetMode offb_set_mode;
+        offb_set_mode.request.custom_mode = "AUTO.LOITER";
 
-    if (set_mode_client.call(offb_set_mode) && offb_set_mode.response.success) {
-        ROS_INFO("Offboard enabled");
+        if (set_mode_client.call(offb_set_mode) && offb_set_mode.response.success) {
+            ROS_INFO("LOITER enabled");
+        }
     }
 }
 
@@ -148,6 +150,7 @@ void disArm(ros::NodeHandle& nh)
     }
 }
 
+/*
 void armAndModeOffboard(ros::NodeHandle& nh, ros::Time& last_request)
 {
     // turn board into offboard mode
@@ -160,6 +163,33 @@ void armAndModeOffboard(ros::NodeHandle& nh, ros::Time& last_request)
             arm(nh);
             last_request = ros::Time::now();
         }
+    }
+}
+*/
+
+void armAndModeOffboard(ros::NodeHandle& nh)
+{
+    // turn board into offboard mode
+    if (current_state.mode != "OFFBOARD") {
+        modeOffBoard(nh);
+        // last_request = ros::Time::now();
+    } else {
+        // check system armd
+        if (!current_state.armed) {
+            arm(nh);
+            // last_request = ros::Time::now();
+        }
+    }
+}
+
+void fallSafe(ros::NodeHandle& nh)
+{
+    //0.05
+    if (ros::Time::now() - msg.Data.t > ros::Duration(1.0)) {
+        modeLOITER(nh);
+        //msg.sendStatusUseSerial(eular, current_state, pos_status, dis_status);
+    } else {
+        armAndModeOffboard(nh);
     }
 }
 
@@ -246,6 +276,9 @@ int main(int argc, char** argv)
     msg.clear();
     while (ros::ok()) {
         msg.checkSerialCmd();
+
+        //fall safe
+        fallSafe(nh);
 
         // set status led
 
