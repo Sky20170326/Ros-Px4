@@ -10,7 +10,7 @@ extern "C" {
 #include <stdlib.h>
 #include <string.h>
 
-#define DIV 100
+#define DIV 10000
 #define BufferLength 100
 #define splitChar ','
 

@@ -112,6 +112,18 @@ void modeOffBoard(ros::NodeHandle& nh)
     }
 }
 
+void modeLOITER(ros::NodeHandle& nh)
+{
+    ros::ServiceClient set_mode_client = nh.serviceClient<mavros_msgs::SetMode>("mavros/set_mode");
+
+    mavros_msgs::SetMode offb_set_mode;
+    offb_set_mode.request.custom_mode = "AUTO.LOITER";
+
+    if (set_mode_client.call(offb_set_mode) && offb_set_mode.response.success) {
+        ROS_INFO("Offboard enabled");
+    }
+}
+
 void arm(ros::NodeHandle& nh)
 {
     mavros_msgs::CommandBool arm_cmd;
@@ -156,6 +168,7 @@ char CtrlModeMsg[CtrlMode_max][10] = {
     "Pose",
     "Raw"
 };
+
 void showInfo(geometry_msgs::Vector3 eular)
 {
     cout << ((current_state.armed == true) ? "0" : "1");
@@ -220,7 +233,9 @@ int main(int argc, char** argv)
 
 #ifdef simulator
     // offboard
-    modeOffBoard(nh);
+    // modeOffBoard(nh);
+
+    // modeLOITER(nh);
     // arm
     arm(nh);
 #endif

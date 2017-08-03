@@ -8,44 +8,42 @@
 #include <geometry_msgs/TwistStamped.h>
 #include <mavros_msgs/State.h>
 #include <sensor_msgs/Range.h>
+#include <ros/time.h>
 
 class MsgIo {
 private:
-        serial s;
-        char* _portName;
-
+    serial s;
+    char*  _portName;
 
 public:
+    struct RecData {
+        ros::Time                 t;
+        geometry_msgs::Quaternion setPos;
+        enum CtrlMode             ctrlMode;
+        float                     pitch = 0, roll = 0;
+    } Data;
 
-        struct RecData {
-                geometry_msgs::Quaternion setPos;
-                enum CtrlMode ctrlMode;
-                float pitch = 0, roll = 0;
-        } Data;
+    MsgIo();
+    MsgIo(char* portName)
+    {
+        _portName = portName;
+        s.Open(_portName, 115200, 8, NO, 1);
+    }
 
-        MsgIo();
-        MsgIo(char * portName)
-        {
-                _portName = portName;
-                s.Open(_portName, 115200, 8, NO, 1);
-        }
+    void checkSerialCmd();
+    void checkUp(char* s);
+    void SerialCallBack(std::string str);
+    void sendStatusUseSerial(geometry_msgs::Vector3& eular,
+        mavros_msgs::State&                          current_state,
+        geometry_msgs::PoseStamped&                  pos_status,
+        sensor_msgs::Range&                          dis_status);
+    void clear();
 
-        void checkSerialCmd();
-        void checkUp(char* s);
-        void SerialCallBack(std::string str);
-        void sendStatusUseSerial(geometry_msgs::Vector3 &eular,
-                                 mavros_msgs::State &current_state,
-                                 geometry_msgs::PoseStamped& pos_status,
-                                 sensor_msgs::Range& dis_status
-                                 );
-        void clear();
-
-        // ~MsgIo()                  = default;
-        // MsgIo(const MsgIo& other) = default;
-        // MsgIo(MsgIo&& other)      = default;
-        // MsgIo& operator=(const MsgIo& other) = default;
-        // MsgIo& operator=(MsgIo&& other) = default;
-
+    // ~MsgIo()                  = default;
+    // MsgIo(const MsgIo& other) = default;
+    // MsgIo(MsgIo&& other)      = default;
+    // MsgIo& operator=(const MsgIo& other) = default;
+    // MsgIo& operator=(MsgIo&& other) = default;
 };
 
 #endif //_MSG_IO_

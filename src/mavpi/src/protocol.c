@@ -135,7 +135,7 @@ int unpack(char* str, int* p, int maxLength)
     int num = 1;
     while (s = strtok(NULL, splitCharPtr)) {
         //printf("%s \n",s);
-        if (*s >= '0' && *s <= '9') {
+        if (*s >= '0' && *s <= '9' || *s == '-') {
             *p++ = atoi(s);
         } else {
             *p++ = *s;
@@ -186,6 +186,7 @@ bool readFilter(char* c)
         *c == 'r' || *c == 's' //head
         || *c == '\n' //tail
         || (*c >= '0' && *c <= '9') //number
+        || *c == '-'
         || (*c == ',') //split
         );
 }

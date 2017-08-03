@@ -88,17 +88,17 @@ int main(int argc, char* argv[])
     //     error("CheckString err");
     // }
 
-    upload_s up = makeUpPack(Pose, 0.03, 0.66, 0.00, 0.03, 0.08, 0.04);
-    info("up make!");
-    char* ut = packUpload(&up);
-    info("up: " + string(ut));
+    // upload_s up = makeUpPack(Pose, 0.03, 0.66, 0.00, 0.03, 0.08, 0.04);
+    // info("up make!");
+    // char* ut = packUpload(&up);
+    // info("up: " + string(ut));
 
     // download_s dp = makeDownPack(0.2, 0.3, 0.5, 0.2, 0.0, 0.0, 1.5, 0.7, 0.2, 0.5, 0.3);
     // char* dt = packDownload(&dp);
     // info("down: " + string(dt));
 
     //upload unpack test
-    char utc[] = "r,7,1,3,66,0,3,8,4,100,6,\n";
+    char utc[] = "r,84,1,-100,-200,-400,-500,-600,-300,100,1,\n";
     checkUp(utc);
     // char utcerr1[] = "r,0,0,0,150,70,100,20,50,60,\n";
     // checkUp(utcerr1);
